@@ -1,0 +1,12 @@
+@mixin breakpoint($size) {
+  @if $size == small {
+    @media (max-width: 830px) {
+      @content;
+    }
+  }
+}
+
+@mixin flexRowSpaceBet {
+  display: flex;
+  justify-content: space-between;
+}
