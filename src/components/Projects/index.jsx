@@ -5,19 +5,7 @@ import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import ProjectModal from '../ProjectModal'
 
-// // Importation des images
-
-import bookiImg from '../../assets/images/projects/booki/bookiproj.webp'
-import kasaImg from '../../assets/images/projects/kasa/kasaproj.webp'
-import monVieuxGrimImg from '../../assets/images/projects/MVG/MVGproj.webp'
-import ninaCarducciImg from '../../assets/images/projects/ninaCard/ninacarducciproj.webp'
-import qwentaImg from '../../assets/images/projects/qwenta/qwentaproj.webp'
-import sophieBluelImg from '../../assets/images/projects/sophieBl/sophiebluelproj.webp'
-
-// import imgNC1 from '../../assets/projects/NinaCarducci/NCarducci-img1.jpg'
-// import imgNC2 from '../../assets/projects/NinaCarducci/NCarducci-img2.jpg'
-// import imgNC3 from '../../assets/projects/NinaCarducci/NCarducci-img3.jpg'
-
+// Importation des données des projets
 import projectData from '../../datas/projectData.json'
 
 import CSS3 from '../../assets/images/tools/CSS3.webp'
@@ -49,27 +37,6 @@ const allTools = [
 function Projects() {
   const [selectedTools, setSelectedTools] = useState([]) // État pour gérer l'outil sélectionné dans les filtres
   const [selectedProject, setSelectedProject] = useState(null) // État pour gérer le projet sélectionné
-
-  // Fonction pour récupérer l'image à partir du nom de fichier
-  const getImage = (imageName) => {
-    switch (imageName) {
-      case 'booki.jpg':
-        return bookiImg
-      case 'kasa.webp':
-        return kasaImg
-      case 'monvieuxgrimoire.jpg':
-        return monVieuxGrimImg
-      case 'ninacarducci.webp':
-        return ninaCarducciImg
-      case 'Qwenta.jpg':
-        return qwentaImg
-      case 'sophiebluel.jpg':
-        return sophieBluelImg
-
-      default:
-        return null // Ou une image par défaut si nécessaire
-    }
-  }
 
   // Fonction pour filtrer les projets en fonction des outils sélectionnés
   const filterProjects = () => {
@@ -135,7 +102,7 @@ function Projects() {
             }
           >
             <div className="image-container">
-              <img src={getImage(image)} alt={title} />
+              <img src={image} alt={title} />
             </div>
             <div className="informations_container">
               <h3>{title}</h3>
