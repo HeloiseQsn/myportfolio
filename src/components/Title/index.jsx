@@ -21,8 +21,8 @@ function Title() {
   }, []) // on éxécute l'animation une fois
 
   return (
-    <div className="typewriter-container">
-      <h1 id="typedtext"></h1>
+    <div className="title__container">
+      <h1 id="typedtext" className="title__container--text"></h1>
     </div>
   )
 }

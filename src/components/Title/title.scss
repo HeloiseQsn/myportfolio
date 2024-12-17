@@ -1,0 +1,19 @@
+@use '../../style/main.scss' as mainStyle;
+@use '../../style/variables.scss' as vars;
+@use '../../style/mixin.scss' as mixin;
+
+.title__container {
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 3rem;
+  margin: 10px 50px;
+  letter-spacing: 6px;
+  font-weight: bold;
+  text-align: center;
+
+  &--text {
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    font-weight: inherit;
+  }
+}
