@@ -1,0 +1,54 @@
+[
+  {
+    "id": "item-1",
+    "title": "Booki",
+    "description": "Création de la page d'accueil d'une agence de voyage avec HTML et CSS",
+    "image": "booki.jpg",
+    "imagesDiap": [],
+    "tools": ["HTML5", "CSS3", "VsCode"]
+  },
+  {
+    "id": "item-2",
+    "title": "Sophie Bluel",
+    "description": "Création d'une page web dynamique avec Javascript",
+    "image": "sophiebluel.jpg",
+    "imagesDiap": [],
+    "tools": ["JavaScript", "VsCode"]
+  },
+  {
+    "id": "item-3",
+    "title": "Nina Carducci",
+    "description": "Débugger et optimiser un site de photographe",
+    "image": "ninacarducci.webp",
+    "imagesDiap": [
+      "NCarducci-img1.jpg",
+      "NCarducci-img2.jpg",
+      "NCarducci-img3.jpg"
+    ],
+    "tools": ["HTML5", "CSS3", "JavaScript", "VsCode"]
+  },
+  {
+    "id": "item-4",
+    "title": "Kasa",
+    "description": "Création d'une application web de location immobilière avec React",
+    "image": "kasa.webp",
+    "imagesDiap": [],
+    "tools": ["React", "Sass", "VsCode"]
+  },
+  {
+    "id": "item-5",
+    "title": "Mon Vieux Grimoire",
+    "description": "Développement du backend d'un site de notation de livres",
+    "image": "monvieuxgrimoire.jpg",
+    "imagesDiap": [],
+    "tools": ["Express", "Node.js", "VsCode", "MongoDB"]
+  },
+  {
+    "id": "item-6",
+    "title": "Qwenta",
+    "description": "Gestion de projet",
+    "image": "Qwenta.jpg",
+    "imagesDiap": [],
+    "tools": ["Figma", "Notion"]
+  }
+]
