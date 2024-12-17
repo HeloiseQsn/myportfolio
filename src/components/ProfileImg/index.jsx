@@ -1,4 +1,5 @@
 import profileImg from '../../assets/images/profil/profil.webp'
+import './ProfileImg.scss'
 
 function ProfileImage() {
   return (
