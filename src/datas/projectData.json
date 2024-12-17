@@ -5,7 +5,11 @@
     "description": "Création de la page d'accueil d'une agence de voyage avec HTML et CSS",
     "image": "booki.jpg",
     "imagesDiap": [],
-    "tools": ["HTML5", "CSS3", "VsCode"]
+    "tools": ["HTML5", "CSS3", "VsCode"],
+    "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
+    "context": "Ce projet consistait à créer la page d'accueil d'une agence de voyage en utilisant HTML et CSS, en me concentrant sur la dimension responsive du site. J'avais pour référence une maquette Figma et une base de code.",
+    "challenges": "Débutante en code, le principal défi de cette mission était d'apprendre les bases du HTML et CSS et de comprendre comment les utiliser pour créer une page d'accueil. Il m'a fallu apprendre à traduire les besoins sur maquette en gérant la mise en page sur différents appareils. J'ai également appris à organiser ma structure, débogguer les erreurs et résoudre des problèmes de design, tout en maintenant un code propre.",
+    "skills": "Implémenter une interface responsive avec HTML et CSS, Intégrer du contenu conformément à une maquette avec HTML et CSS, Versionner son projet avec Git et Github, Installer un environnement de développement front-end"
   },
   {
     "id": "item-2",
@@ -13,7 +17,11 @@
     "description": "Création d'une page web dynamique avec Javascript",
     "image": "sophiebluel.jpg",
     "imagesDiap": [],
-    "tools": ["JavaScript", "VsCode"]
+    "tools": ["JavaScript", "VsCode"],
+    "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
+    "context": "",
+    "challenges": "",
+    "skills": ""
   },
   {
     "id": "item-3",
@@ -25,7 +33,11 @@
       "NCarducci-img2.jpg",
       "NCarducci-img3.jpg"
     ],
-    "tools": ["HTML5", "CSS3", "JavaScript", "VsCode"]
+    "tools": ["HTML5", "CSS3", "JavaScript", "VsCode"],
+    "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
+    "context": "",
+    "challenges": "",
+    "skills": ""
   },
   {
     "id": "item-4",
@@ -33,7 +45,11 @@
     "description": "Création d'une application web de location immobilière avec React",
     "image": "kasa.webp",
     "imagesDiap": [],
-    "tools": ["React", "Sass", "VsCode"]
+    "tools": ["React", "Sass", "VsCode"],
+    "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
+    "context": "",
+    "challenges": "",
+    "skills": ""
   },
   {
     "id": "item-5",
@@ -41,7 +57,11 @@
     "description": "Développement du backend d'un site de notation de livres",
     "image": "monvieuxgrimoire.jpg",
     "imagesDiap": [],
-    "tools": ["Express", "Node.js", "VsCode", "MongoDB"]
+    "tools": ["Express", "Node.js", "VsCode", "MongoDB"],
+    "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
+    "context": "",
+    "challenges": "",
+    "skills": ""
   },
   {
     "id": "item-6",
@@ -49,6 +69,10 @@
     "description": "Gestion de projet",
     "image": "Qwenta.jpg",
     "imagesDiap": [],
-    "tools": ["Figma", "Notion"]
+    "tools": ["Figma", "Notion"],
+    "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
+    "context": "",
+    "challenges": "",
+    "skills": ""
   }
 ]

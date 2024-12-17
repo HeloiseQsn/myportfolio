@@ -22,16 +22,25 @@ function ProjectModal({ project, closeModal }) {
         <div className="modal-content-description">
           <div className="projectcontext">
             <h3>Contexte du projet</h3>
-            <p className="githubLink">Accéder au code du projet sur Github</p>
+            <div className="github">{project.context}</div>
+            <a
+              href={project.githublink}
+              className="githubLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Accéder au code du projet sur Github
+            </a>
           </div>
           <div className="projectcompetences">
             <h3>Compétences développées</h3>
+            <div>{project.skills}</div>
           </div>
           <div className="projectdefis">
             <h3>Défis rencontrés</h3>
+            <div>{project.challenges}</div>
           </div>
           <div className="tools-container">
-            {' '}
             <h3>Outils utilisés</h3>
             {project.tools.map((tool, index) => (
               <img
@@ -55,8 +64,12 @@ ProjectModal.propTypes = {
     description: PropTypes.string.isRequired,
     imagesDiap: PropTypes.array.isRequired,
     tools: PropTypes.array.isRequired,
+    githublink: PropTypes.string.isRequired,
+    context: PropTypes.string.isRequired,
+    skills: PropTypes.string.isRequired,
+    challenges: PropTypes.string.isRequired,
   }).isRequired,
-  closeModal: PropTypes.func.isRequired, // Fonction pour fermer la modal
+  closeModal: PropTypes.func.isRequired,
 }
 
 export default ProjectModal

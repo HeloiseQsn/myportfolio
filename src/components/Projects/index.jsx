@@ -103,14 +103,35 @@ function Projects() {
 
   // Génération des items du carousel filtré
   const items = filterProjects().map(
-    ({ id, title, description, image, tools, imagesDiap }) => (
+    ({
+      id,
+      title,
+      description,
+      image,
+      tools,
+      imagesDiap,
+      context,
+      skills,
+      challenges,
+      githublink,
+    }) => (
       <SliderItem
         key={id}
         content={
           <div
             className="carousel-item"
             onClick={() =>
-              openModal({ title, description, image, tools, imagesDiap })
+              openModal({
+                title,
+                description,
+                image,
+                tools,
+                imagesDiap,
+                context,
+                skills,
+                challenges,
+                githublink,
+              })
             }
           >
             <div className="image-container">
