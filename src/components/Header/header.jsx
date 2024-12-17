@@ -1,4 +1,3 @@
-import './header.scss'
 import { NavLink } from 'react-router-dom'
 import Logodesktop from '../../assets/images/logo/Logo1250.webp'
 import Logomobile from '../../assets/images/logo/Logo500.webp'

@@ -1,4 +1,3 @@
-import './home.scss'
 import ProfileImage from '../../components/ProfileImg'
 import Title from '../../components/Title'
 

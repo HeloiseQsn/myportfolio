@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import './title.scss'
 
 function Title() {
   useEffect(() => {
