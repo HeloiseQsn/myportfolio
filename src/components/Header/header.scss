@@ -1,3 +1,21 @@
 @use '../../style/main.scss' as mainStyle;
 @use '../../style/variables.scss' as vars;
 @use '../../style/mixin.scss' as mixin;
+
+header {
+  display: flex;
+  background-color: #d5e2db;
+  height: 250px;
+  padding: 20px;
+  picture {
+    width: 60%;
+    img {
+      height: 100%;
+    }
+  }
+  ul {
+    display: flex;
+    gap: 5rem;
+    font-size: 30px;
+  }
+}
