@@ -1,0 +1,8 @@
+@use '../../style/main.scss' as mainStyle;
+@use '../../style/variables.scss' as vars;
+@use '../../style/mixin.scss' as mixin;
+
+.main-home {
+  position: relative;
+  top: -150px;
+}
