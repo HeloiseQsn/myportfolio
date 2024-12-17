@@ -1,0 +1,18 @@
+@use '../../style/main.scss' as mainStyle;
+@use '../../style/variables.scss' as vars;
+@use '../../style/mixin.scss' as mixin;
+
+.profile-img__container {
+  display: flex;
+  justify-content: center;
+
+  &--photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    object-position: center top;
+  }
+}
