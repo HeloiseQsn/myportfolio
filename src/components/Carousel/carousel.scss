@@ -1,0 +1,44 @@
+@use '../../style/main.scss' as mainStyle;
+@use '../../style/variables.scss' as vars;
+@use '../../style/mixin.scss' as mixin;
+
+.carrousel {
+  position: relative;
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    &.active {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 415px;
+    }
+  }
+
+  &__numslide {
+    position: absolute;
+    right: 50%;
+    transform: translateX(-50%);
+    bottom: 1rem;
+    color: black;
+    text-shadow: 1px 1px black;
+  }
+}

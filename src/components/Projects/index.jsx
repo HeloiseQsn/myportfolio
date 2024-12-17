@@ -18,7 +18,7 @@ import sophieBluelImg from '../../assets/images/projects/sophieBl/sophiebluelpro
 // import imgNC2 from '../../assets/projects/NinaCarducci/NCarducci-img2.jpg'
 // import imgNC3 from '../../assets/projects/NinaCarducci/NCarducci-img3.jpg'
 
-// import projectData from '../../datas/projectData.json'
+import projectData from '../../datas/projectData.json'
 
 import CSS3 from '../../assets/images/tools/CSS3.webp'
 import Express from '../../assets/images/tools/express.webp'
@@ -65,12 +65,7 @@ function Projects() {
         return qwentaImg
       case 'sophiebluel.jpg':
         return sophieBluelImg
-      case 'NCarducci-img1.jpg':
-        return imgNC1
-      case 'NCarducci-img2.jpg':
-        return imgNC2
-      case 'NCarducci-img3.jpg':
-        return imgNC3
+
       default:
         return null // Ou une image par défaut si nécessaire
     }
@@ -109,22 +104,25 @@ function Projects() {
   // Génération des items du carousel filtré
   const items = filterProjects().map(
     ({ id, title, description, image, tools, imagesDiap }) => (
-      <SliderItem key={id}>
-        <div
-          className="carousel-item"
-          onClick={() =>
-            openModal({ title, description, image, tools, imagesDiap })
-          }
-        >
-          <div className="image-container">
-            <img src={getImage(image)} alt={title} />
+      <SliderItem
+        key={id}
+        content={
+          <div
+            className="carousel-item"
+            onClick={() =>
+              openModal({ title, description, image, tools, imagesDiap })
+            }
+          >
+            <div className="image-container">
+              <img src={getImage(image)} alt={title} />
+            </div>
+            <div className="informations_container">
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </div>
           </div>
-          <div className="informations_container">
-            <h3>{title}</h3>
-            <p>{description}</p>
-          </div>
-        </div>
-      </SliderItem>
+        }
+      />
     ),
   )
 

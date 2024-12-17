@@ -1,0 +1,92 @@
+@use '../../style/main.scss' as mainStyle;
+@use '../../style/variables.scss' as vars;
+@use '../../style/mixin.scss' as mixin;
+
+.filters-container {
+  display: flex;
+}
+
+.tools-filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-item {
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.filter-item.active {
+  transform: scale(1.5);
+}
+
+.tool-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.clear-filters-btn {
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.clear-filters-btn:hover {
+  background-color: #ddd;
+}
+
+.react-multi-carousel-list {
+  .react-multi-carousel-track {
+    .react-multi-carousel-item {
+      margin: 3rem !important;
+      div:not(.informations_container):not(.image-container) {
+        height: 600px !important;
+        width: 100% !important;
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 25px;
+        padding: 7px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center !important;
+        background-color: #d5e2db;
+        cursor: grab;
+        &:hover {
+          transform: scale(1.03);
+          box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
+          img {
+            opacity: 100%;
+          }
+        }
+
+        .image-container {
+          width: 100%;
+          height: 70%;
+          overflow: hidden;
+          position: relative;
+
+          img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            border-radius: 25px !important;
+            margin: 0 !important;
+            opacity: 80%;
+          }
+        }
+        .informations_container {
+          justify-content: flex-start;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
