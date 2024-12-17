@@ -2,6 +2,9 @@
 @use '../../style/variables.scss' as vars;
 @use '../../style/mixin.scss' as mixin;
 
+html {
+  scroll-behavior: smooth;
+}
 header {
   display: flex;
   background-color: #d5e2db;

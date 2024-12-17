@@ -8,10 +8,10 @@ function Home() {
     <main className="main-home">
       <ProfileImage />
       <Title />
-      <h2>Mes projets</h2>
+      <h2 id="projects">Mes projets</h2>
       <Projects />
-      <h2>Qui suis-je ? </h2>
-      <h2>Mes expériences</h2>
+      <h2 id="about">Qui suis-je ? </h2>
+      <h2 id="experiences">Mes expériences</h2>
     </main>
   )
 }

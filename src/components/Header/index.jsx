@@ -14,9 +14,15 @@ function Header() {
       <nav>
         <ul>
           <NavLink to="/contact">Contact</NavLink>
-          <li>Mes projets</li>
-          <li>Qui suis-je ?</li>
-          <li>Mes expériences</li>
+          <li>
+            <a href="#projects">Mes projets</a>
+          </li>
+          <li>
+            <a href="#about">Qui suis-je ?</a>
+          </li>
+          <li>
+            <a href="#experiences">Mes expériences</a>
+          </li>
         </ul>
       </nav>
     </header>
