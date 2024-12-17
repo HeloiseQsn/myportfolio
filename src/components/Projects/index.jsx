@@ -8,17 +8,28 @@ import ProjectModal from '../ProjectModal'
 // Importation des données des projets
 import projectData from '../../datas/projectData.json'
 
-import CSS3 from '../../assets/images/tools/CSS3.webp'
-import Express from '../../assets/images/tools/express.webp'
-import Figma from '../../assets/images/tools/figma.webp'
-import HTML5 from '../../assets/images/tools/html5.webp'
-import JS from '../../assets/images/tools/JS.webp'
-import MongoDB from '../../assets/images/tools/mongodb.webp'
-import NodeJS from '../../assets/images/tools/nodejs.webp'
-import Notion from '../../assets/images/tools/notion.webp'
-import ReactImg from '../../assets/images/tools/react.webp'
-import VsCode from '../../assets/images/tools/vscode.webp'
-import Sass from '../../assets/images/tools/sass.webp'
+const CSS3 =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/CSS3.webp'
+const Express =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/express.webp'
+const Figma =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp'
+const HTML5 =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/html5.webp'
+const JS =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/JS.webp'
+const MongoDB =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/mongodb.webp'
+const NodeJS =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/nodejs.webp'
+const Notion =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/notion.webp'
+const ReactImg =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/react.webp'
+const VsCode =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp'
+const Sass =
+  'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/sass.webp'
 
 const allTools = [
   { name: 'HTML5', logo: HTML5 },
@@ -40,17 +51,20 @@ function Projects() {
 
   // Fonction pour filtrer les projets en fonction des outils sélectionnés
   const filterProjects = () => {
+    console.log('Selected tools:', selectedTools)
+    console.log('Project data:', projectData)
+
     if (selectedTools.length === 0) {
       return projectData
     }
     return projectData.filter((project) =>
-      selectedTools.every((tool) => project.tools.includes(tool)),
+      selectedTools.every((toolUrl) => project.tools.includes(toolUrl)),
     )
   }
 
   // Fonction pour gérer les filtres (sélectionner un seul outil à la fois)
-  const handleToolToggle = (toolName) => {
-    setSelectedTools([toolName]) // Sélectionner seulement le filtre cliqué
+  const handleToolToggle = (toolUrl) => {
+    setSelectedTools([toolUrl]) // Sélectionner seulement le filtre cliqué
   }
 
   // Fonction pour défiltrer
@@ -140,8 +154,8 @@ function Projects() {
           {allTools.map((tool) => (
             <div
               key={tool.name}
-              className={`filter-item ${selectedTools.includes(tool.name) ? 'active' : ''}`}
-              onClick={() => handleToolToggle(tool.name)}
+              className={`filter-item ${selectedTools.includes(tool.logo) ? 'active' : ''}`}
+              onClick={() => handleToolToggle(tool.logo)}
             >
               <img src={tool.logo} alt={tool.name} className="tool-logo" />
             </div>

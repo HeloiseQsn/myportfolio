@@ -12,7 +12,12 @@
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/booki/imagesdiap/booki5.webp",
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/booki/imagesdiap/booki6.webp"
     ],
-    "tools": ["HTML5", "CSS3", "VsCode"],
+    "tools": [
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/html5.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/CSS3.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp"
+    ],
     "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
     "context": "Ce projet consistait à créer la page d'accueil d'une agence de voyage en utilisant HTML et CSS, en me concentrant sur la dimension responsive du site. J'avais pour référence une maquette Figma et une base de code.",
     "challenges": "Débutante en code, le principal défi de cette mission était d'apprendre les bases du HTML et CSS et de comprendre comment les utiliser pour créer une page d'accueil. Il m'a fallu apprendre à traduire les besoins sur maquette en gérant la mise en page sur différents appareils, notamment avec Flexbox. J'ai également appris à organiser ma structure, débogguer les erreurs et résoudre des problèmes de design, tout en maintenant un code propre.",
@@ -24,7 +29,11 @@
     "description": "Création d'une page web dynamique avec Javascript",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/sophieBl/sophiebluelproj.webp",
     "imagesDiap": [],
-    "tools": ["JavaScript", "VsCode"],
+    "tools": [
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/JS.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp"
+    ],
     "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
     "context": "",
     "challenges": "",
@@ -40,7 +49,12 @@
       "NCarducci-img2.jpg",
       "NCarducci-img3.jpg"
     ],
-    "tools": ["HTML5", "CSS3", "JavaScript", "VsCode"],
+    "tools": [
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/html5.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/CSS3.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/JS.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp"
+    ],
     "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
     "context": "",
     "challenges": "",
@@ -52,7 +66,12 @@
     "description": "Création d'une application web de location immobilière avec React",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/kasa/kasaproj.webp",
     "imagesDiap": [],
-    "tools": ["React", "Sass", "VsCode"],
+    "tools": [
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/react.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/sass.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp"
+    ],
     "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
     "context": "",
     "challenges": "",
@@ -64,7 +83,13 @@
     "description": "Développement du backend d'un site de notation de livres",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/MVG/MVGproj.webp",
     "imagesDiap": [],
-    "tools": ["Express", "Node.js", "VsCode", "MongoDB"],
+    "tools": [
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/express.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/nodejs.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/mongodb.webp"
+    ],
     "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
     "context": "",
     "challenges": "",
@@ -76,7 +101,10 @@
     "description": "Gestion de projet",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/qwenta/qwentaproj.webp",
     "imagesDiap": [],
-    "tools": ["Figma", "Notion"],
+    "tools": [
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/notion.webp"
+    ],
     "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
     "context": "",
     "challenges": "",

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
-import Carousel from 'react-multi-carousel'
-import 'react-multi-carousel/lib/styles.css'
+import Carousel from '../Carousel'
 import './projectmodal.scss'
 
 function ProjectModal({ project, closeModal }) {
@@ -19,41 +18,7 @@ function ProjectModal({ project, closeModal }) {
         <h2>{project.title}</h2>
         <p>{project.description}</p>
 
-        <Carousel
-          responsive={{
-            superLargeDesktop: {
-              breakpoint: { max: 4000, min: 1024 },
-              items: 1,
-            },
-            desktop: {
-              breakpoint: { max: 1024, min: 768 },
-              items: 1,
-            },
-            tablet: {
-              breakpoint: { max: 768, min: 464 },
-              items: 1,
-            },
-            mobile: {
-              breakpoint: { max: 464, min: 0 },
-              items: 1,
-            },
-          }}
-          ssr={true}
-          infinite={true}
-          autoPlay={true}
-          autoPlaySpeed={3000}
-          keyBoardControl={true}
-          customTransition="transform 0.5s ease-in-out"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={['tablet', 'mobile']}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-        >
-          {project.imagesDiap.map((image, index) => (
-            <img key={index} src={image} alt={`slide-${index}`} />
-          ))}
-        </Carousel>
+        <Carousel imagesDiap={project.imagesDiap} />
 
         <div className="modal-content-description">
           <div className="projectcontext">
