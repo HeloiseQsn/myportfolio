@@ -49,6 +49,7 @@
       margin: 3rem !important;
       div:not(.informations_container):not(.image-container) {
         min-height: 600px !important;
+        max-height: 600px !important;
         width: 100% !important;
         box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
         border-radius: 25px;
