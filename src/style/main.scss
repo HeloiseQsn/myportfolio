@@ -2,8 +2,10 @@ li {
   list-style: none;
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+  color: inherit;
 }
+
 body {
   font-family: 'Work sans', cursive;
   font-weight: 400;
@@ -43,9 +45,4 @@ h3 {
   font-family: 'Waiting for the Sunrise', cursive;
   font-size: 2.5rem;
   font-weight: 100;
-}
-nav a,
-nav li {
-  font-family: 'Work sans', cursive;
-  font-size: 1.5rem;
 }

@@ -56,7 +56,9 @@ function Home() {
         </p>
         <p>
           Je souhaite désormais intégrer une formation Bac +3 en contrat de
-          professionnalisation sur le bassin Rennais.
+          professionnalisation sur le bassin Rennais. Si vous êtes à la
+          recherche d&apos;une candidate motivée et enthousiaste, qui ne demande
+          qu&apos;à apprendre davantage, n&apos;hésitez pas à me contacter 😊 !
         </p>
       </div>
     </main>
