@@ -20,9 +20,6 @@ function Header() {
           <li>
             <a href="#about">Qui suis-je ?</a>
           </li>
-          <li>
-            <a href="#experiences">Mes expériences</a>
-          </li>
         </ul>
       </nav>
     </header>

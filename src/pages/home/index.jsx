@@ -59,8 +59,6 @@ function Home() {
           professionnalisation sur le bassin Rennais.
         </p>
       </div>
-
-      <h2 id="experiences">Mes expériences</h2>
     </main>
   )
 }
