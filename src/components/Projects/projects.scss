@@ -48,7 +48,7 @@
     .react-multi-carousel-item {
       margin: 3rem !important;
       div:not(.informations_container):not(.image-container) {
-        height: 600px !important;
+        min-height: 600px !important;
         width: 100% !important;
         box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
         border-radius: 25px;
