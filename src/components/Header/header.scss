@@ -8,7 +8,7 @@ html {
 header {
   display: flex;
   background-color: #d5e2db;
-  height: 250px;
+  height: 150px;
   padding: 20px;
   picture {
     width: 60%;
@@ -19,6 +19,7 @@ header {
   ul {
     display: flex;
     gap: 5rem;
-    font-size: 30px;
+    font-size: 1rem;
+    font-family: 'work sans', cursive;
   }
 }
