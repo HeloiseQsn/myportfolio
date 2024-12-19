@@ -4,6 +4,8 @@
 
 .filters-container {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .tools-filter {
@@ -58,7 +60,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center !important;
-        background-color: #d5e2db;
+        background-color: vars.$main-color;
         cursor: grab;
         &:hover {
           transform: scale(1.03);
