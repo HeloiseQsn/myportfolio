@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import './projects.scss'
-import SliderItem from '../SliderItem'
-import Carousel from 'react-multi-carousel'
-import 'react-multi-carousel/lib/styles.css'
 import ProjectModal from '../ProjectModal'
+import Diapo from '../Diapo'
 
 // Importation des données des projets
 import projectData from '../../datas/projectData.json'
 
+// URLs des images de logos
 const CSS3 =
   'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/CSS3.webp'
 const Express =
@@ -46,10 +45,9 @@ const allTools = [
 ]
 
 function Projects() {
-  const [selectedTools, setSelectedTools] = useState([]) // État pour gérer l'outil sélectionné dans les filtres
-  const [selectedProject, setSelectedProject] = useState(null) // État pour gérer le projet sélectionné
+  const [selectedTools, setSelectedTools] = useState([])
+  const [selectedProject, setSelectedProject] = useState(null)
 
-  // Fonction pour filtrer les projets en fonction des outils sélectionnés
   const filterProjects = () => {
     if (selectedTools.length === 0) {
       return projectData
@@ -59,90 +57,23 @@ function Projects() {
     )
   }
 
-  // Fonction pour gérer les filtres (sélectionner un seul outil à la fois)
   const handleToolToggle = (toolUrl) => {
-    setSelectedTools([toolUrl]) // Sélectionner seulement le filtre cliqué
+    setSelectedTools([toolUrl])
   }
 
-  // Fonction pour défiltrer
   const handleClearFilters = () => {
     setSelectedTools([])
   }
 
-  // Ouvrir la modale en cliquant sur un projet
   const openModal = (project) => {
-    setSelectedProject(project) // Ouvrir la modale avec les détails du projet sélectionné
+    setSelectedProject(project)
   }
 
-  // Fermer la modale
   const closeModal = () => {
     setSelectedProject(null)
   }
 
-  // Génération des items du carousel filtré
-  const items = filterProjects().map(
-    ({
-      id,
-      title,
-      description,
-      image,
-      tools,
-      imagesDiap,
-      context,
-      skills,
-      challenges,
-      githublink,
-    }) => (
-      <SliderItem
-        key={id}
-        content={
-          <div
-            className="carousel-item"
-            onClick={() =>
-              openModal({
-                title,
-                description,
-                image,
-                tools,
-                imagesDiap,
-                context,
-                skills,
-                challenges,
-                githublink,
-              })
-            }
-          >
-            <div className="image-container">
-              <img src={image} alt={title} />
-            </div>
-            <div className="informations_container">
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </div>
-          </div>
-        }
-      />
-    ),
-  )
-
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 1024 },
-      items: 3,
-    },
-    desktop: {
-      breakpoint: { max: 1024, min: 768 },
-      items: 2,
-    },
-    tablet: {
-      breakpoint: { max: 768, min: 464 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  }
+  const filteredProjects = filterProjects()
 
   return (
     <div className="projects-container">
@@ -167,22 +98,7 @@ function Projects() {
         </button>
       </div>
 
-      <Carousel
-        responsive={responsive}
-        ssr={true}
-        infinite={true}
-        autoPlay={true}
-        autoPlaySpeed={3000}
-        keyBoardControl={true}
-        customTransition="transform 0.5s ease-in-out"
-        transitionDuration={700}
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={['tablet', 'mobile']}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-40-px"
-      >
-        {items}
-      </Carousel>
+      <Diapo projects={filteredProjects} onProjectClick={openModal} />
 
       {selectedProject && (
         <ProjectModal project={selectedProject} closeModal={closeModal} />
