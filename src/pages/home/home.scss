@@ -8,6 +8,9 @@
   @include mixin.breakpoint(medium) {
     top: -50px;
   }
+  @include mixin.breakpoint(small) {
+    top: 30px;
+  }
 }
 .about__text {
   text-align: justify;

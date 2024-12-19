@@ -10,14 +10,23 @@ header {
   background-color: vars.$main-color;
   height: 150px;
   padding: 20px;
+
+  @include mixin.breakpoint(small) {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   picture {
     width: 60%;
     @include mixin.breakpoint(medium) {
       width: 40%;
     }
     @include mixin.breakpoint(small) {
-      width: 20%;
+      height: 80%;
+      width: 100%;
+      text-align: center;
     }
+
     img {
       height: 100%;
     }
@@ -27,6 +36,9 @@ header {
     gap: 3rem;
     @include mixin.breakpoint(large) {
       gap: 2rem;
+    }
+    @include mixin.breakpoint(small) {
+      gap: 5rem;
     }
   }
 }
