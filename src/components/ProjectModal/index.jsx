@@ -44,12 +44,7 @@ function ProjectModal({ project, closeModal }) {
           <div className="tools-container">
             <h3>Outils utilisés</h3>
             {project.tools.map((tool, index) => (
-              <img
-                key={index}
-                src={tool}
-                alt={`tool-${index}`}
-                className="tool-logo"
-              />
+              <img key={index} src={tool} alt={`tool-${index}`} />
             ))}
           </div>
         </div>

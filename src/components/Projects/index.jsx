@@ -146,20 +146,23 @@ function Projects() {
 
   return (
     <div className="projects-container">
-      <div className="filters-container">
-        <div className="tools-filter">
+      <div className="projects-container__filters">
+        <div className="projects-container__filters--tools">
           {allTools.map((tool) => (
             <div
               key={tool.name}
-              className={`filter-item ${selectedTools.includes(tool.logo) ? 'active' : ''}`}
+              className={`projects-container__filters--tools--item ${selectedTools.includes(tool.logo) ? 'active' : ''}`}
               onClick={() => handleToolToggle(tool.logo)}
             >
-              <img src={tool.logo} alt={tool.name} className="tool-logo" />
+              <img src={tool.logo} alt={tool.name} />
             </div>
           ))}
         </div>
 
-        <button className="clear-filters-btn" onClick={handleClearFilters}>
+        <button
+          className="projects-container__filters--clear-btn"
+          onClick={handleClearFilters}
+        >
           Réinitialiser les filtres
         </button>
       </div>

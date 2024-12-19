@@ -2,47 +2,59 @@
 @use '../../style/variables.scss' as vars;
 @use '../../style/mixin.scss' as mixin;
 
-.filters-container {
+//filtres
+
+.projects-container__filters {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+  @include mixin.breakpoint(large) {
+    flex-wrap: wrap;
+  }
 
-.tools-filter {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
+  &--tools {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    @include mixin.breakpoint(large) {
+      width: 100%;
+    }
+    @include mixin.breakpoint(medium) {
+      flex-wrap: wrap;
+    }
 
-.filter-item {
-  cursor: pointer;
-  padding: 10px;
-  transition: transform 0.3s ease;
-}
+    &--item {
+      cursor: pointer;
+      padding: 10px;
+      transition: transform 0.3s ease;
 
-.filter-item.active {
-  transform: scale(1.5);
-}
-
-.tool-logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
-.clear-filters-btn {
-  padding: 10px 20px;
-  background-color: #f2f2f2;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.clear-filters-btn:hover {
-  background-color: #ddd;
+      &.active {
+        transform: scale(1.5);
+      }
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        @include mixin.breakpoint(small) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  &--clear-btn {
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: #ddd;
+    }
+  }
 }
 
 .react-multi-carousel-list {
