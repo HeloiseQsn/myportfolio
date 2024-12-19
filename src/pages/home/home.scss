@@ -5,6 +5,9 @@
 .main-home {
   position: relative;
   top: -120px;
+  @include mixin.breakpoint(medium) {
+    top: -50px;
+  }
 }
 .about__text {
   text-align: justify;

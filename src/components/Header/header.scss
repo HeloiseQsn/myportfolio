@@ -12,6 +12,12 @@ header {
   padding: 20px;
   picture {
     width: 60%;
+    @include mixin.breakpoint(medium) {
+      width: 40%;
+    }
+    @include mixin.breakpoint(small) {
+      width: 20%;
+    }
     img {
       height: 100%;
     }
@@ -19,5 +25,12 @@ header {
   ul {
     display: flex;
     gap: 3rem;
+    @include mixin.breakpoint(large) {
+      gap: 2rem;
+    }
   }
+}
+
+nav {
+  padding: 0 1rem;
 }
