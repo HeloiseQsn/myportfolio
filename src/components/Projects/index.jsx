@@ -51,9 +51,6 @@ function Projects() {
 
   // Fonction pour filtrer les projets en fonction des outils sélectionnés
   const filterProjects = () => {
-    console.log('Selected tools:', selectedTools)
-    console.log('Project data:', projectData)
-
     if (selectedTools.length === 0) {
       return projectData
     }

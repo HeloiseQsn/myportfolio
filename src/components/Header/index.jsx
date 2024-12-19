@@ -1,9 +1,9 @@
-import { NavLink } from 'react-router-dom'
 import './header.scss'
+import PropTypes from 'prop-types'
 import Logodesktop from '../../assets/images/logo/Logo1250.webp'
 import Logomobile from '../../assets/images/logo/Logo500.webp'
 
-function Header() {
+function Header({ openModal }) {
   return (
     <header>
       <picture>
@@ -13,7 +13,17 @@ function Header() {
       </picture>
       <nav>
         <ul>
-          <NavLink to="/contact">Contact</NavLink>
+          <li>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault()
+                openModal()
+              }}
+            >
+              Contact{' '}
+            </a>
+          </li>
           <li>
             <a href="#projects">Mes projets</a>
           </li>
@@ -24,6 +34,10 @@ function Header() {
       </nav>
     </header>
   )
+}
+
+Header.propTypes = {
+  openModal: PropTypes.func.isRequired,
 }
 
 export default Header

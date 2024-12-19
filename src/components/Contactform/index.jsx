@@ -1,6 +1,8 @@
+import './contactform.scss'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import emailjs from 'emailjs-com'
+import logoMail from '../../assets/images/logo/chatmail.svg'
 
 function ContactForm({ closeModal }) {
   const [formData, setFormData] = useState({
@@ -42,57 +44,58 @@ function ContactForm({ closeModal }) {
   }
 
   return (
-    <div>
+    <div className="contact-form">
       <h2>Contactez-moi</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Nom :</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
+      <div className="form-content">
+        <img className="contact-form__img" src={logoMail}></img>
+        <form onSubmit={handleSubmit}>
+          <div className="labelinput">
+            <label htmlFor="name">Nom :</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="labelinput">
+            <label htmlFor="email">Email :</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="labelinput">
+            <label htmlFor="society">Entreprise :</label>
+            <input
+              type="text"
+              id="society"
+              name="society"
+              value={formData.society}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="labelinput">
+            <label htmlFor="message">Message :</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <div>
-          <label htmlFor="email">Email :</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="society">Entreprise :</label>
-          <input
-            type="text"
-            id="society"
-            name="society"
-            value={formData.society}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Message :</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <button type="submit">Envoyer</button>
-      </form>
-
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
       {status && <p>{status}</p>}
     </div>
   )
