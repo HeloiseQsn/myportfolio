@@ -45,4 +45,7 @@ header {
 
 nav {
   padding: 0 1rem;
+  @include mixin.breakpoint(small) {
+    padding: 0;
+  }
 }

@@ -12,7 +12,7 @@
       @content;
     }
   } @else if $size == verysmall {
-    @media (max-width: 445px) {
+    @media (max-width: 450px) {
       @content;
     }
   }

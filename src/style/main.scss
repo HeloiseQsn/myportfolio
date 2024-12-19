@@ -1,3 +1,5 @@
+@use './variables.scss' as vars;
+@use './mixin.scss' as mixin;
 * {
   max-width: 1440px;
   margin: 0 auto;
@@ -25,6 +27,10 @@ h1 {
   letter-spacing: 6px;
   font-weight: bold;
   text-align: center;
+  @include mixin.breakpoint(small) {
+    font-size: 2rem;
+    padding: 20px;
+  }
 }
 h2 {
   font-family: 'Work sans', cursive;
@@ -33,6 +39,10 @@ h2 {
   position: relative;
   padding-bottom: 40px;
   margin-bottom: 20px;
+
+  @include mixin.breakpoint(small) {
+    font-size: 1.5rem;
+  }
 
   &::after {
     content: '';
