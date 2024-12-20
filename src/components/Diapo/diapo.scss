@@ -1,4 +1,5 @@
 @use '../../style/variables.scss' as vars;
+@use '../../style/mixin.scss' as mixin;
 
 .carousel {
   position: relative;
@@ -26,6 +27,18 @@
       backface-visibility: hidden;
       transition: transform 0.5s ease;
       cursor: grab;
+      @include mixin.breakpoint(medium) {
+        flex: 0 0 calc(50% - 20px);
+        padding: 5px;
+        margin: 5px;
+        margin-bottom: 30px;
+      }
+      @include mixin.breakpoint(small) {
+        flex: 0 0 calc(100% - 20px);
+        padding: 5px;
+        margin: 5px;
+        margin-bottom: 30px;
+      }
 
       &.active {
         display: flex;
@@ -61,6 +74,7 @@
         margin: 0;
         text-align: center;
         user-select: none;
+        padding-bottom: 20px;
       }
     }
   }
