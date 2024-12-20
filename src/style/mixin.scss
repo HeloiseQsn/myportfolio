@@ -11,10 +11,6 @@
     @media (max-width: 800px) {
       @content;
     }
-  } @else if $size == verysmall {
-    @media (max-width: 450px) {
-      @content;
-    }
   }
 }
 
