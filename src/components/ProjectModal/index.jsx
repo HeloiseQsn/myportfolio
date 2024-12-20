@@ -16,7 +16,7 @@ function ProjectModal({ project, closeModal }) {
           X
         </span>
         <h2>{project.title}</h2>
-        <p>{project.description}</p>
+        <p className="subtitle">{project.description}</p>
 
         <Carousel imagesDiap={project.imagesDiap} />
 
@@ -43,9 +43,11 @@ function ProjectModal({ project, closeModal }) {
           </div>
           <div className="tools-container">
             <h3>Outils utilisés</h3>
-            {project.tools.map((tool, index) => (
-              <img key={index} src={tool} alt={`tool-${index}`} />
-            ))}
+            <div className="img_container">
+              {project.tools.map((tool, index) => (
+                <img key={index} src={tool} alt={`tool-${index}`} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
