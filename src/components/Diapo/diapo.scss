@@ -10,7 +10,7 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    transition: transform 0.5s ease-in-out; // Ajouter une transition plus fluide
+    will-change: transform; // Ajout pour optimiser les animations
 
     .carousel__card {
       flex: 0 0 22%;

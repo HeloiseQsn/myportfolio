@@ -9,25 +9,49 @@ const VISIBLE_ITEMS = 4
 
 function Diapo({ projects, onProjectClick }) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 800)
 
-  const prevPhoto = useCallback(() => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex === 0 ? projects.length - 1 : prevIndex - 1), // Boucle en début
-    )
-  }, [projects])
-
-  const nextPhoto = useCallback(() => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % projects.length, // Boucle à la fin
-    )
-  }, [projects])
+  const updateScreenSize = () => {
+    setIsSmallScreen(window.innerWidth <= 800)
+  }
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextPhoto()
-    }, 3000) // Change slide every 3 seconds
-    return () => clearInterval(interval)
-  }, [nextPhoto])
+    window.addEventListener('resize', updateScreenSize)
+    return () => window.removeEventListener('resize', updateScreenSize)
+  }, [])
+
+  const prevPhoto = useCallback(() => {
+    if (isAnimating) return
+    setIsAnimating(true)
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? projects.length - 1 : prevIndex - 1,
+    )
+  }, [isAnimating, projects.length])
+
+  const nextPhoto = useCallback(() => {
+    if (isAnimating) return
+    setIsAnimating(true)
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
+  }, [isAnimating, projects.length])
+
+  useEffect(() => {
+    if (!isSmallScreen) {
+      const interval = setInterval(() => {
+        nextPhoto()
+      }, 3000)
+      return () => clearInterval(interval)
+    }
+  }, [nextPhoto, isSmallScreen])
+
+  useEffect(() => {
+    if (isAnimating) {
+      const timeout = setTimeout(() => {
+        setIsAnimating(false)
+      }, 600)
+      return () => clearTimeout(timeout)
+    }
+  }, [isAnimating])
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: nextPhoto,
