@@ -35,6 +35,10 @@
 .closeContainer {
   display: flex;
   justify-content: flex-end;
+  @include mixin.breakpoint(small) {
+    justify-content: center;
+    padding-bottom: 10px;
+  }
   button {
     margin: 0 20px;
   }
