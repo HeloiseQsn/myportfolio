@@ -8,10 +8,15 @@
   &__button {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
+    background-color: grey;
+    border-radius: 50%;
+    opacity: 80%;
+    width: 40px;
     cursor: pointer;
     border: none;
+    img {
+      width: 100%;
+    }
 
     &--left {
       left: 0;
