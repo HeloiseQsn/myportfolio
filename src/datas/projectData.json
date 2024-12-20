@@ -100,8 +100,10 @@
     "id": "item-6",
     "title": "Mon portfolio",
     "description": "Création de mon portfolio",
-    "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/qwenta/qwentaproj.webp",
-    "imagesDiap": [],
+    "image": "https://github.com/HeloiseQsn/myportfolio/blob/master/src/assets/images/projects/portfolio/portfolio.jpg?raw=true",
+    "imagesDiap": [
+      "https://github.com/HeloiseQsn/myportfolio/blob/master/src/assets/images/projects/portfolio/imagesdiap/potfoliodiap1.jpg?raw=true"
+    ],
     "tools": [
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp",
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/react.webp",
