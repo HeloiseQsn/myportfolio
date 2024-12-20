@@ -19,7 +19,7 @@ function Home() {
   return (
     <div>
       <Header openModal={openModal} />
-      <main className="main-home">
+      <main className="main-home" id="home">
         <ProfileImage />
         <Title />
         <h2 id="projects">Mes projets</h2>
