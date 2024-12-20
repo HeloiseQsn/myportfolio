@@ -60,7 +60,7 @@ function Carousel({ imagesDiap = [] }) {
 
 // Validation des props
 Carousel.propTypes = {
-  imagesDiap: PropTypes.arrayOf(PropTypes.string).isRequired, // Assure que imagesDiap est un tableau de chaînes de caractères
+  imagesDiap: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default Carousel

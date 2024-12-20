@@ -88,6 +88,10 @@ function Home() {
           </div>
           <ContactForm closeModal={closeModal} />
         </Modal>
+        <div className="otherSkills">
+          <h2>Mes atouts</h2>
+          <div></div>
+        </div>
       </main>
       <Footer />
     </div>
