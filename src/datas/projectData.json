@@ -81,7 +81,9 @@
     "title": "Mon Vieux Grimoire",
     "description": "Développement du backend d'un site de notation de livres",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/MVG/MVGproj.webp",
-    "imagesDiap": [],
+    "imagesDiap": [
+      "https://github.com/HeloiseQsn/myportfolio/blob/master/src/assets/images/projects/MVG/imagesdiap/mvgdiap1.jpg?raw=true"
+    ],
     "tools": [
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp",
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/express.webp",
@@ -101,12 +103,13 @@
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/qwenta/qwentaproj.webp",
     "imagesDiap": [],
     "tools": [
-      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp",
-      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/notion.webp"
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/react.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/sass.webp"
     ],
     "githublink": "https://github.com/HeloiseQsn/OC-HQ-ProjetBooki",
-    "context": "",
-    "challenges": "",
-    "skills": ""
+    "context": "Ce projet consiste à créer mon portfolio pour clore ma formation. Je dois créer un site web statique, performant, reprenant les connaissances acquises tout au long du parcours.",
+    "challenges": "Réutiliser toutes les connaissances acquises, en m'adaptant car il y a des points qui évoluent très vite. J'ai par exemple dû utiliser Vite au lieu de Create-React-App car ce dernier est déprécié. J'ai également dû rechercher un hébergement pour pouvoir mettre mon site en ligne. C'est un projet que je pourrais faire mûrir avec le développement d'un backend.",
+    "skills": "Créer un site web à partir de zéro, Maîtriser les techniques pour rendre un site web compatible avec tous les types d'appareils, Améliorer la performance du site et son référencement pour le rendre plus visible et accessible"
   }
 ]
