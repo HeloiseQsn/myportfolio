@@ -1,8 +1,10 @@
 @use './variables.scss' as vars;
 @use './mixin.scss' as mixin;
 * {
-  max-width: 1440px;
   margin: 0 auto;
+}
+main {
+  max-width: 1440px;
 }
 li {
   list-style: none;

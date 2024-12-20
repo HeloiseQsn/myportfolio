@@ -44,9 +44,7 @@
     "description": "Débugger et optimiser un site de photographe",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/ninaCard/ninacarducciproj.webp",
     "imagesDiap": [
-      "NCarducci-img1.jpg",
-      "NCarducci-img2.jpg",
-      "NCarducci-img3.jpg"
+      "https://github.com/HeloiseQsn/myportfolio/blob/master/src/assets/images/projects/ninaCard/imagesdiap/ninaCarddiap1.jpg?raw=true"
     ],
     "tools": [
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/html5.webp",
@@ -72,9 +70,9 @@
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp"
     ],
     "githublink": "https://github.com/HeloiseQsn/Kasa-app",
-    "context": "",
-    "challenges": "",
-    "skills": ""
+    "context": "Le projet concerne la refonte du site web d'une entreprise de location immobilière. Il implique de créer le site en utilisant React et Sass, en se basant sur une maquette Figma. La configuration initiale a été faite avec Create-React-App.",
+    "challenges": "Appréhender le fonctionnement de React et sa structure.",
+    "skills": "Initialiser une application avec Create-React-App, Configurer la navigation entre les pages de l'application avec React Router, Développer des éléments de l'interface d'un site web grâce à des composants React, Mettre en oeuvre des animations CSS, Développer une interface web avec Sass"
   },
   {
     "id": "item-5",
