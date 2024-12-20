@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { useState, useCallback, useEffect } from 'react'
+import { useSwipeable } from 'react-swipeable'
 import './diapo.scss'
 import rightArrow from '../../assets/images/chevron_carousel_right.webp'
 import leftArrow from '../../assets/images/chevron_carousel_left.webp'
@@ -28,6 +29,13 @@ function Diapo({ projects, onProjectClick }) {
     return () => clearInterval(interval)
   }, [nextPhoto])
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: nextPhoto,
+    onSwipedRight: prevPhoto,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  })
+
   if (!projects.length) {
     return <div>No projects available</div>
   }
@@ -43,7 +51,7 @@ function Diapo({ projects, onProjectClick }) {
   }
 
   return (
-    <div className="carousel">
+    <div className="carousel" {...swipeHandlers}>
       {projects.length > VISIBLE_ITEMS && (
         <button
           className="carousel__button carousel__button--left"

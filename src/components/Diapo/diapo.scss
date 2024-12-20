@@ -10,6 +10,7 @@
     overflow: hidden;
     position: relative;
     width: 100%;
+    transition: transform 0.5s ease-in-out; // Ajouter une transition plus fluide
 
     .carousel__card {
       flex: 0 0 22%;
@@ -25,7 +26,9 @@
       position: relative;
       transform-style: preserve-3d;
       backface-visibility: hidden;
-      transition: transform 0.5s ease;
+      transition:
+        transform 0.5s ease,
+        opacity 0.5s ease; // Transition plus fluide
       cursor: grab;
       @include mixin.breakpoint(medium) {
         flex: 0 0 calc(50% - 20px);
