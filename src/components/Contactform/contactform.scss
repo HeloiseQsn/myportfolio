@@ -72,6 +72,9 @@
               width: calc(100% - 20px);
             }
           }
+          input {
+            height: 2rem;
+          }
           textarea {
             height: 5rem;
             @include mixin.breakpoint(medium) {

@@ -5,13 +5,7 @@
     "description": "Création de la page d'accueil d'une agence de voyage avec HTML et CSS",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/booki/bookiproj.webp",
     "imagesDiap": [
-      "https://github.com/HeloiseQsn/myportfolio/blob/master/src/assets/images/projects/booki/imagesdiap/bookidiap1.jpg?raw=true",
-      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/booki/imagesdiap/booki1.webp",
-      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/booki/imagesdiap/booki2.webp",
-      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/booki/imagesdiap/booki3.webp",
-      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/booki/imagesdiap/booki4.webp",
-      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/booki/imagesdiap/booki5.webp",
-      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/booki/imagesdiap/booki6.webp"
+      "https://github.com/HeloiseQsn/myportfolio/blob/master/src/assets/images/projects/booki/imagesdiap/bookidiap1.jpg?raw=true"
     ],
     "tools": [
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/html5.webp",
@@ -33,12 +27,14 @@
     "tools": [
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp",
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/JS.webp",
-      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp"
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/nodejs.webp",
+      "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/notion.webp"
     ],
     "githublink": "https://github.com/HeloiseQsn/Portfolio-architecte-sophie-bluel",
-    "context": "",
-    "challenges": "",
-    "skills": ""
+    "context": "Le projet consistait à créer une page web dynamique pour une architecte d'intérieure, en utilisant JavaScript et en communiquant avec une API. En tant que développeur frontend, je devais développer la page de présentation de l'architecte, la page de connexion de l'administrateur et une modale permettant d'uploader des photos.",
+    "challenges": "Appréhender le fonctionnement de Javascript et des API et la connexion d'un utilisateur.",
+    "skills": "Gérer les évènements utilisateurs avec JavaScript, Manipuler les éléments du DOM avec JavaScript, Récupérer les données utilisateur dans le JavaScript via des formulaires"
   },
   {
     "id": "item-3",
