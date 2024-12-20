@@ -62,7 +62,9 @@
     "title": "Kasa",
     "description": "Création d'une application web de location immobilière avec React",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/kasa/kasaproj.webp",
-    "imagesDiap": [],
+    "imagesDiap": [
+      "https://github.com/HeloiseQsn/myportfolio/blob/master/src/assets/images/projects/kasa/imagesdiap/kasadiap1.jpg?raw=true"
+    ],
     "tools": [
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp",
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/react.webp",
@@ -88,9 +90,9 @@
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/mongodb.webp"
     ],
     "githublink": "https://github.com/HeloiseQsn/mon_vieux_grimoire",
-    "context": "",
-    "challenges": "",
-    "skills": ""
+    "context": "J'ai développé le backend d'un site de notations de livres pour une chaîne de librairie. Mon rôle consistait à créer un serveur Express, à le connecter à une base de données MongoDB et à mettre en place un système d'authentification sécurité. Le front est développé par quelqu'un d'autre en React.",
+    "challenges": "Les principaux défis de ce projet ont été la mise en place de la structure du serveur et la gestion de la communication avec la base de données, l'implémentation des opérations CRUD pour les livres et les user, la sécurité des données et leur stockage, ainsi que l'optimisation des images téléchargées par les utilisateurs.",
+    "skills": "Implémenter un modèle logique de données conformément à la règlementation, Mettre en oeuvre des opérations CRUD de manière sécurisée, Stocker des données de manière sécurisée"
   },
   {
     "id": "item-6",
