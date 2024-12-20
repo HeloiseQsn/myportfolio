@@ -28,15 +28,13 @@ function Home() {
         <div className="about__text">
           <p>
             Je m&apos;appelle Héloïse, j&apos;ai 34 ans et je suis en
-            reconversion dans le développement web 😊.{' '}
-          </p>
-          <p>
-            Passionnée de musique, de danse et culture bretonne, j&apos;ai fait
-            mes premiers pas dans la vie active en tant que professeure de harpe
-            celtique. Expérience qui aura duré un an, le temps de me rendre
-            compte qu&apos;à 18 ans, je n&apos;avais pas envie de continuer à
-            travailler quand les autres ne travaillent pas , et que j&apos;avais
-            envie de découvrir autre chose.{' '}
+            reconversion dans le développement web 😊. Passionnée de musique, de
+            danse et culture bretonne, j&apos;ai fait mes premiers pas dans la
+            vie active en tant que professeure de harpe celtique. Expérience qui
+            aura duré un an, le temps de me rendre compte qu&apos;à 18 ans, je
+            n&apos;avais pas envie de continuer à travailler quand les autres ne
+            travaillent pas , et que j&apos;avais envie de découvrir autre
+            chose.{' '}
           </p>
           <p>
             J&apos;ai donc repris une voie un peu plus conventionnelle, en
@@ -77,7 +75,9 @@ function Home() {
             contacter 😊 !
           </p>
         </div>
-        <button onClick={openModal}>Me contacter</button>
+        <div className="button-container">
+          <button onClick={openModal}>Me contacter</button>
+        </div>
         <Modal
           isOpen={isModalOpen}
           onRequestClose={closeModal}
