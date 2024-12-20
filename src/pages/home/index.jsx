@@ -83,7 +83,9 @@ function Home() {
           onRequestClose={closeModal}
           contentLabel="Formulaire de contact"
         >
-          <button onClick={closeModal}>Fermer</button>
+          <div className="closeContainer">
+            <button onClick={closeModal}>Fermer</button>
+          </div>
           <ContactForm closeModal={closeModal} />
         </Modal>
       </main>

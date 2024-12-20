@@ -97,8 +97,8 @@
   },
   {
     "id": "item-6",
-    "title": "Qwenta",
-    "description": "Gestion de projet",
+    "title": "Mon portfolio",
+    "description": "Création de mon portfolio",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/qwenta/qwentaproj.webp",
     "imagesDiap": [],
     "tools": [
