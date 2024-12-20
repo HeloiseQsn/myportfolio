@@ -1,3 +1,15 @@
 @use '../../style/main.scss' as mainStyle;
 @use '../../style/variables.scss' as vars;
 @use '../../style/mixin.scss' as mixin;
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: vars.$main-color;
+  padding: 20px;
+  cursor: pointer;
+  img {
+    height: 2rem;
+  }
+}
