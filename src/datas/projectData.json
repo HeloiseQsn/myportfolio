@@ -23,7 +23,9 @@
     "title": "Sophie Bluel",
     "description": "Création d'une page web dynamique avec Javascript",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/sophieBl/sophiebluelproj.webp",
-    "imagesDiap": [],
+    "imagesDiap": [
+      "https://github.com/HeloiseQsn/myportfolio/blob/master/src/assets/images/projects/sophieBl/imagesdiap/sblueldiap1.jpg?raw=true"
+    ],
     "tools": [
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/figma.webp",
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/JS.webp",
@@ -53,9 +55,9 @@
       "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/vscode.webp"
     ],
     "githublink": "https://github.com/HeloiseQsn/HeloiseQsn-Nina-Carducci-Dev",
-    "context": "",
-    "challenges": "",
-    "skills": ""
+    "context": "Le projet consistait à travailler sur le référencement du site web d'une photographe, en améliorant sa performance et son accessibilité. Ma première mission consistait à identifier les problèmes de chargement et de référencement, puis à proposer puis à proposer et appliquer des solutions pour optimiser la vitesse de chargement, la structure du code et le SEO. J'ai créé un rapport illustrant les résultats avant et après. ",
+    "challenges": "Les principaux défis de ce projet incluent l’identification précise des problèmes de performance et d’accessibilité, la mise en œuvre des recommandations d’optimisation tout en corrigeant les bugs existants, et l’amélioration du référencement local et des métadonnées pour les réseaux sociaux.",
+    "skills": "Optimiser les performances d'un site web, Débugger un site web grâce aux Chrome DevTools, Rédiger un cahier de recette pour tester un site"
   },
   {
     "id": "item-4",
