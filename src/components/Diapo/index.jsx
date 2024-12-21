@@ -75,23 +75,23 @@ function Diapo({ projects, onProjectClick }) {
   }
 
   return (
-    <div className="carousel" {...swipeHandlers}>
+    <div className="diapo" {...swipeHandlers}>
       {projects.length > VISIBLE_ITEMS && (
         <button
-          className="carousel__button carousel__button--left"
+          className="diapo__button diapo__button--left"
           onClick={prevPhoto}
         >
           <img src={leftArrow} alt="previous arrow" />
         </button>
       )}
-      <div className="carousel__projects">
+      <div className="diapo__projects">
         {getVisibleProjects().map((project, index) => (
           <div
             key={index}
             onClick={() => onProjectClick(project)}
-            className={`carousel__card ${index === 0 ? 'active' : ''}`}
+            className={`diapo__projects--card ${index === 0 ? 'active' : ''}`}
           >
-            <div className="image__container">
+            <div className="diapo__projects--card--image-container">
               <img src={project.image} alt={`Project ${index + 1}`} />
             </div>
             <h3>{project.title}</h3>
@@ -101,7 +101,7 @@ function Diapo({ projects, onProjectClick }) {
       </div>
       {projects.length > VISIBLE_ITEMS && (
         <button
-          className="carousel__button carousel__button--right"
+          className="diapo__button diapo__button--right"
           onClick={nextPhoto}
         >
           <img src={rightArrow} alt="next arrow" />

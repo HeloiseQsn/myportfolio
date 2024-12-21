@@ -1,8 +1,35 @@
 @use '../../style/variables.scss' as vars;
 @use '../../style/mixin.scss' as mixin;
 
-.carousel {
+.diapo {
   position: relative;
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    z-index: 2;
+    background-color: grey;
+    opacity: 80%;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 
   &__projects {
     display: flex;
@@ -12,13 +39,16 @@
     position: relative;
     width: 100%;
     will-change: transform;
+
     @include mixin.breakpoint(medium) {
       width: 80%;
     }
+
     @include mixin.breakpoint(medium) {
       justify-content: space-between;
     }
-    .carousel__card {
+
+    &--card {
       flex: 0 0 22%;
       margin: 3% 1%;
       height: 380px;
@@ -34,7 +64,7 @@
       backface-visibility: hidden;
       transition:
         transform 0.5s ease,
-        opacity 0.5s ease; // Transition plus fluide
+        opacity 0.5s ease;
       cursor: grab;
       @include mixin.breakpoint(medium) {
         flex: 0 0 calc(50% - 40px);
@@ -57,7 +87,7 @@
         transform: scale(1.03);
       }
 
-      .image__container {
+      &--image-container {
         width: 100%;
         height: 200px !important;
         display: flex;
@@ -70,43 +100,18 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
-          user-select: none;
         }
       }
 
       h3 {
         text-align: center;
-        user-select: none;
       }
 
       p {
         margin: 0;
         text-align: center;
-        user-select: none;
         padding-bottom: 20px;
       }
-    }
-  }
-
-  &__button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    &--left {
-      left: 0;
-    }
-
-    &--right {
-      right: 0;
-    }
-
-    img {
-      width: 2rem;
-      height: 2rem;
     }
   }
 
@@ -117,11 +122,4 @@
     transform: translateX(-50%);
     font-size: 1rem;
   }
-}
-.carousel__button {
-  z-index: 2;
-  background-color: grey;
-  opacity: 80%;
-  height: 45px;
-  border-radius: 50%;
 }
