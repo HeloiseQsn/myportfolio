@@ -11,17 +11,17 @@ function ProjectModal({ project, closeModal }) {
 
   return (
     <div className="modal" onClick={handleOutsideClick}>
-      <div className="modal-content">
-        <span className="close" onClick={closeModal}>
+      <div className="modal__content">
+        <span className="modal__content--close" onClick={closeModal}>
           X
         </span>
         <h2>{project.title}</h2>
-        <p className="subtitle">{project.description}</p>
+        <p className="modal__content--subtitle">{project.description}</p>
 
         <Carousel imagesDiap={project.imagesDiap} />
 
-        <div className="modal-content-description">
-          <div className="projectcontext">
+        <div className="modal__content--description">
+          <div className="modal__content--description--context">
             <h3>Contexte du projet</h3>
             <div className="github">{project.context}</div>
             <a
@@ -33,17 +33,17 @@ function ProjectModal({ project, closeModal }) {
               Accéder au code du projet sur Github
             </a>
           </div>
-          <div className="projectcompetences">
+          <div className="modal__content--description--competences">
             <h3>Compétences développées</h3>
             <div>{project.skills}</div>
           </div>
-          <div className="projectdefis">
+          <div className="modal__content--description--challenges">
             <h3>Défis rencontrés</h3>
             <div>{project.challenges}</div>
           </div>
-          <div className="tools-container">
+          <div className="modal__content--description--tools">
             <h3>Outils utilisés</h3>
-            <div className="img_container">
+            <div className="modal__content--description--tools--logo">
               {project.tools.map((tool, index) => (
                 <img key={index} src={tool} alt={`tool-${index}`} />
               ))}

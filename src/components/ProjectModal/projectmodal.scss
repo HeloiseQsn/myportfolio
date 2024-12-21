@@ -16,105 +16,84 @@
   align-items: center;
   z-index: 1000;
 
-  .subtitle {
-    padding-bottom: 20px;
-  }
-}
+  .modal__content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    text-align: center;
+    overflow: auto;
+    align-items: center;
 
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  position: relative;
-  max-width: 80%;
-  max-height: 80%;
-  text-align: center;
-  overflow: auto;
-  align-items: center;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.tools-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  h3 {
-    width: 100%;
-  }
-
-  .img_container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    img {
-      height: 60px;
+    &--subtitle {
+      padding-bottom: 20px;
     }
-  }
-}
 
-.modal-content-description {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  .projectcontext,
-  .projectdefis {
-    width: 60%;
-    @include mixin.breakpoint(medium) {
-      width: 50%;
+    &--close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
     }
-    @include mixin.breakpoint(small) {
-      width: 100%;
-    }
-  }
 
-  .projectcompetences,
-  .tools-container {
-    width: 40%;
-    @include mixin.breakpoint(medium) {
-      width: 50%;
-      @include mixin.breakpoint(small) {
-        width: 100%;
+    &--description {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+
+      &--context,
+      &--challenges {
+        width: 60%;
+        @include mixin.breakpoint(medium) {
+          width: 50%;
+        }
+        @include mixin.breakpoint(small) {
+          width: 100%;
+        }
+      }
+
+      &--competences,
+      &--tools {
+        width: 40%;
+        @include mixin.breakpoint(medium) {
+          width: 50%;
+          @include mixin.breakpoint(small) {
+            width: 100%;
+          }
+        }
+      }
+
+      &--competences,
+      &--context,
+      &--challenges {
+        div {
+          text-align: justify;
+          padding: 15px;
+        }
+      }
+
+      &--tools {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+
+        h3 {
+          width: 100%;
+        }
+
+        &--logo {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          img {
+            height: 60px;
+          }
+        }
       }
     }
-  }
-}
-
-.projectcompetences,
-.projectcontext,
-.projectdefis {
-  div {
-    text-align: justify;
-    padding: 15px;
-  }
-}
-
-.imgdiap {
-  object-fit: contain;
-}
-
-.Carousel {
-  height: 600px;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-}
-
-.closeContainer {
-  display: flex;
-  justify-content: flex-end;
-  @include mixin.breakpoint(small) {
-    justify-content: center;
-    padding-bottom: 10px;
-  }
-  button {
-    margin: 0 20px;
   }
 }
