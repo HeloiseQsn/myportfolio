@@ -5,35 +5,42 @@ import rightArrow from '../../assets/images/chevron_carousel_right.webp'
 import leftArrow from '../../assets/images/chevron_carousel_left.webp'
 
 function Carousel({ imagesDiap = [] }) {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0) //initialisation à 0 de la variable index courant
 
   const prevPhoto = useCallback(() => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? imagesDiap.length - 1 : prevIndex - 1,
+    //mémorisation de la fonction avec useCallback pour éviter renders inutiles
+    setCurrentIndex(
+      (
+        prevIndex, //si index = 0, on retourne à la dernière photo du carousel, sinon index courant - 1
+      ) => (prevIndex === 0 ? imagesDiap.length - 1 : prevIndex - 1),
     )
   }, [imagesDiap])
 
   const nextPhoto = useCallback(() => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === imagesDiap.length - 1 ? 0 : prevIndex + 1,
+    setCurrentIndex(
+      (
+        prevIndex, //si index = total des images -1, retour à la 1ère photo, sinon index +1
+      ) => (prevIndex === imagesDiap.length - 1 ? 0 : prevIndex + 1),
     )
   }, [imagesDiap])
 
   if (!imagesDiap.length) {
-    return <div>No pictures available</div>
+    return <div>Pas d&apos;images disponibles</div>
   }
 
   return (
     <div className="carrousel">
-      {imagesDiap.length > 1 && (
+      {' '}
+      {imagesDiap.length > 1 && ( // Si plus d'une image, affiche le bouton pour aller à la photo précédente
         <button
           className="carrousel__button carrousel__button--left"
-          onClick={prevPhoto}
+          onClick={prevPhoto} // au clic, appel de la fonction prev photo
         >
-          <img src={leftArrow} alt="flèche précédente" />
+          <img src={leftArrow} alt="flèche précédente" />{' '}
         </button>
       )}
       <div className="carrousel__images">
+        {' '}
         {imagesDiap.map((image, index) => (
           <img
             key={index}
@@ -43,22 +50,22 @@ function Carousel({ imagesDiap = [] }) {
           />
         ))}
       </div>
-      {imagesDiap.length > 1 && (
+      {imagesDiap.length > 1 && ( // Si plus d'une image, affiche le numéro de l'image courante / total des images
         <div className="carrousel__numslide">{`${currentIndex + 1}/${imagesDiap.length}`}</div>
       )}
-      {imagesDiap.length > 1 && (
+      {imagesDiap.length > 1 && ( // Si plus d'une image, affiche le bouton pour aller à la photo suivante
         <button
           className="carrousel__button carrousel__button--right"
-          onClick={nextPhoto}
+          onClick={nextPhoto} // Appelle 'nextPhoto' au clic
         >
-          <img src={rightArrow} alt="flèche suivante" />
+          <img src={rightArrow} alt="flèche suivante" />{' '}
         </button>
       )}
     </div>
   )
 }
 
-// Validation des props
+// Validation des props pour s'assurer que 'imagesDiap' est un tableau de chaînes de caractères
 Carousel.propTypes = {
   imagesDiap: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
