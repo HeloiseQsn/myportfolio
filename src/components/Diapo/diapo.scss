@@ -7,11 +7,14 @@
   &__projects {
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
     position: relative;
     width: 100%;
-    will-change: transform; // Ajout pour optimiser les animations
-
+    will-change: transform;
+    @include mixin.breakpoint(medium) {
+      width: 80%;
+    }
     .carousel__card {
       flex: 0 0 22%;
       margin: 3% 1%;
@@ -31,9 +34,9 @@
         opacity 0.5s ease; // Transition plus fluide
       cursor: grab;
       @include mixin.breakpoint(medium) {
-        flex: 0 0 calc(50% - 20px);
+        flex: 0 0 calc(50% - 40px);
         padding: 5px;
-        margin: 5px;
+        margin: 5px 15px;
         margin-bottom: 30px;
       }
       @include mixin.breakpoint(small) {
