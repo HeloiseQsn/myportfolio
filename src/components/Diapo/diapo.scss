@@ -15,6 +15,9 @@
     @include mixin.breakpoint(medium) {
       width: 80%;
     }
+    @include mixin.breakpoint(medium) {
+      justify-content: space-between;
+    }
     .carousel__card {
       flex: 0 0 22%;
       margin: 3% 1%;

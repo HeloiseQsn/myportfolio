@@ -8,9 +8,11 @@ footer {
   align-items: center;
   background-color: vars.$main-color;
   padding: 20px;
-  top: 30px;
   position: relative;
   cursor: pointer;
+  @include mixin.breakpoint(small) {
+    top: 30px;
+  }
   img {
     height: 2rem;
   }
