@@ -43,6 +43,8 @@
     padding-bottom: 10px;
   }
   button {
+    position: fixed;
     margin: 0 20px;
+    z-index: 1;
   }
 }

@@ -12,9 +12,9 @@ function ProjectModal({ project, closeModal }) {
   return (
     <div className="modal" onClick={handleOutsideClick}>
       <div className="modal__content">
-        <span className="modal__content--close" onClick={closeModal}>
-          X
-        </span>
+        <div className="close">
+          <button onClick={closeModal}>Fermer</button>
+        </div>
         <h2>{project.title}</h2>
         <p className="modal__content--subtitle">{project.description}</p>
 
@@ -30,7 +30,7 @@ function ProjectModal({ project, closeModal }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Accéder au code du projet sur Github
+              Accéder aux livrables du projet sur Github
             </a>
           </div>
           <div className="modal__content--description--competences">
