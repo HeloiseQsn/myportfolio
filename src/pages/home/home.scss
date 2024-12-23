@@ -2,7 +2,7 @@
 @use '../../style/variables.scss' as vars;
 @use '../../style/mixin.scss' as mixin;
 
-.main-home {
+.home {
   position: relative;
   top: -120px;
   @include mixin.breakpoint(medium) {
@@ -12,7 +12,7 @@
     top: 30px;
   }
 }
-.about__text {
+.about {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -21,7 +21,7 @@
     text-align: justify !important;
   }
 }
-.button-container {
+.contact {
   display: flex;
   justify-content: center;
   padding: 15px;
@@ -35,7 +35,7 @@
     }
   }
 }
-.closeContainer {
+.close {
   display: flex;
   justify-content: flex-end;
   @include mixin.breakpoint(small) {

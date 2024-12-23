@@ -19,13 +19,13 @@ function Home() {
   return (
     <div>
       <Header openModal={openModal} />
-      <main className="main-home" id="home">
+      <main className="home" id="home">
         <ProfileImage />
         <Title />
         <h2 id="projects">Mes projets</h2>
         <Projects />
         <h2 id="about">Qui suis-je ? </h2>
-        <div className="about__text">
+        <div className="about">
           <p>
             Je m&apos;appelle Héloïse, j&apos;ai 34 ans et je suis en
             reconversion dans le développement web 😊. Passionnée de musique, de
@@ -75,7 +75,7 @@ function Home() {
             contacter 😊 !
           </p>
         </div>
-        <div className="button-container">
+        <div className="contact">
           <button onClick={openModal}>Me contacter</button>
         </div>
         <Modal
@@ -83,7 +83,7 @@ function Home() {
           onRequestClose={closeModal}
           contentLabel="Formulaire de contact"
         >
-          <div className="closeContainer">
+          <div className="close">
             <button onClick={closeModal}>Fermer</button>
           </div>
           <ContactForm closeModal={closeModal} />
