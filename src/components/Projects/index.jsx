@@ -76,13 +76,13 @@ function Projects() {
   const filteredProjects = filterProjects()
 
   return (
-    <div className="projects-container">
-      <div className="projects-container__filters">
-        <div className="projects-container__filters--tools">
+    <div>
+      <div className="projects__filters">
+        <div className="projects__filters--tools">
           {allTools.map((tool) => (
             <div
               key={tool.name}
-              className={`projects-container__filters--tools--item ${selectedTools.includes(tool.logo) ? 'active' : ''}`}
+              className={`projects__filters--tools--item ${selectedTools.includes(tool.logo) ? 'active' : ''}`}
               onClick={() => handleToolToggle(tool.logo)}
             >
               <img src={tool.logo} alt={tool.name} />
@@ -91,7 +91,7 @@ function Projects() {
         </div>
 
         <button
-          className="projects-container__filters--clear-btn"
+          className="projects__filters--clear"
           onClick={handleClearFilters}
         >
           Réinitialiser les filtres

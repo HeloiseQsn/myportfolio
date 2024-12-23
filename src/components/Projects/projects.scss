@@ -4,7 +4,7 @@
 
 //filtres
 
-.projects-container__filters {
+.projects__filters {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,7 +42,7 @@
       }
     }
   }
-  &--clear-btn {
+  &--clear {
     padding: 10px 20px;
     background-color: #f2f2f2;
     border: none;
