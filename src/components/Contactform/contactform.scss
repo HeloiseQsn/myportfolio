@@ -3,20 +3,22 @@
 @use '../../style/mixin.scss' as mixin;
 
 .ReactModal__Overlay {
+  // classes react-modal
   background-color: grey !important;
   .ReactModal__Content {
+    // classes react-modal
     background-color: white !important;
     opacity: 1;
-    h2 {
-      margin-bottom: 0;
-    }
-    .form-content {
+
+    .contact-form__content {
       display: flex;
       @include mixin.breakpoint(medium) {
         flex-direction: column;
       }
-
-      .contact-form__img {
+      h2 {
+        margin-bottom: 0;
+      }
+      img {
         width: 200px;
         @include mixin.breakpoint(medium) {
           width: 150px;
@@ -26,7 +28,6 @@
           width: 100px;
         }
       }
-
       form {
         display: flex;
         flex-direction: column;
@@ -47,7 +48,7 @@
           gap: 1.5rem;
         }
 
-        .labelinput {
+        &--labelinput {
           width: 100%;
           display: flex;
           justify-content: space-between;
@@ -56,7 +57,6 @@
           }
           label {
             width: 20%;
-
             @include mixin.breakpoint(small) {
               width: calc(100% - 20px);
               font-size: 0.75rem;

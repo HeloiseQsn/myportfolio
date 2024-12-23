@@ -46,10 +46,10 @@ function ContactForm({ closeModal }) {
   return (
     <div className="contact-form">
       <h2>Contactez-moi</h2>
-      <div className="form-content">
-        <img className="contact-form__img" src={logoMail}></img>
+      <div className="contact-form__content">
+        <img src={logoMail}></img>
         <form onSubmit={handleSubmit}>
-          <div className="labelinput">
+          <div className="contact-form__content--labelinput">
             <label htmlFor="name">Nom :</label>
             <input
               type="text"
@@ -60,7 +60,7 @@ function ContactForm({ closeModal }) {
               required
             />
           </div>
-          <div className="labelinput">
+          <div className="contact-form__content--labelinput">
             <label htmlFor="email">Email :</label>
             <input
               type="email"
@@ -71,7 +71,7 @@ function ContactForm({ closeModal }) {
               required
             />
           </div>
-          <div className="labelinput">
+          <div className="contact-form__content--labelinput">
             <label htmlFor="society">Entreprise :</label>
             <input
               type="text"
@@ -82,7 +82,7 @@ function ContactForm({ closeModal }) {
               required
             />
           </div>
-          <div className="labelinput">
+          <div className="contact-form__content--labelinput">
             <label htmlFor="message">Message :</label>
             <textarea
               id="message"
