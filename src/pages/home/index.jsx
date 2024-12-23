@@ -1,19 +1,31 @@
 import './home.scss'
 import Modal from 'react-modal'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ProfileImage from '../../components/ProfileImg'
 import Title from '../../components/Title'
 import ContactForm from '../../components/Contactform'
 import Projects from '../../components/Projects'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import IsMobile from '../../utils/isMobile'
 
 Modal.setAppElement('#root')
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const isMobile = IsMobile() // Vérification de la taille de l'écran
+  const navigate = useNavigate() // Utilisation du hook de redirection
 
-  const openModal = () => setIsModalOpen(true)
+  const openModal = () => {
+    if (isMobile) {
+      // Redirection vers la page Contact si sur mobile
+      navigate('/contact')
+    } else {
+      // Sinon, ouvrir la modale sur desktop
+      setIsModalOpen(true)
+    }
+  }
   const closeModal = () => setIsModalOpen(false)
 
   return (

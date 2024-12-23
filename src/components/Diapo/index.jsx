@@ -1,25 +1,19 @@
-import PropTypes from 'prop-types'
 import { useState, useCallback, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { useSwipeable } from 'react-swipeable'
+import { useNavigate } from 'react-router-dom'
 import './diapo.scss'
 import rightArrow from '../../assets/images/chevron_carousel_right.webp'
 import leftArrow from '../../assets/images/chevron_carousel_left.webp'
+import IsMobile from '../../utils/isMobile'
 
 const VISIBLE_ITEMS = 4
 
 function Diapo({ projects, onProjectClick }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 800)
-
-  const updateScreenSize = () => {
-    setIsSmallScreen(window.innerWidth <= 800)
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', updateScreenSize)
-    return () => window.removeEventListener('resize', updateScreenSize)
-  }, [])
+  const isMobile = IsMobile() // Utilisation du hook useIsMobile
+  const navigate = useNavigate() // Redirection vers la page projet
 
   const prevPhoto = useCallback(() => {
     if (isAnimating) return
@@ -35,23 +29,13 @@ function Diapo({ projects, onProjectClick }) {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
   }, [isAnimating, projects.length])
 
-  useEffect(() => {
-    if (!isSmallScreen) {
-      const interval = setInterval(() => {
-        nextPhoto()
-      }, 3000)
-      return () => clearInterval(interval)
+  const openProject = (project) => {
+    if (isMobile) {
+      navigate(`/project/${project.id}`)
+    } else {
+      onProjectClick(project)
     }
-  }, [nextPhoto, isSmallScreen])
-
-  useEffect(() => {
-    if (isAnimating) {
-      const timeout = setTimeout(() => {
-        setIsAnimating(false)
-      }, 600)
-      return () => clearTimeout(timeout)
-    }
-  }, [isAnimating])
+  }
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: nextPhoto,
@@ -59,10 +43,6 @@ function Diapo({ projects, onProjectClick }) {
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
   })
-
-  if (!projects.length) {
-    return <div>No projects available</div>
-  }
 
   const getVisibleProjects = () => {
     const start = currentIndex
@@ -72,6 +52,10 @@ function Diapo({ projects, onProjectClick }) {
     } else {
       return [...projects.slice(start), ...projects.slice(0, end)]
     }
+  }
+
+  if (!projects.length) {
+    return <div>No projects available</div>
   }
 
   return (
@@ -87,8 +71,8 @@ function Diapo({ projects, onProjectClick }) {
       <div className="diapo__projects">
         {getVisibleProjects().map((project, index) => (
           <div
-            key={index}
-            onClick={() => onProjectClick(project)}
+            key={project.id}
+            onClick={() => openProject(project)}
             className={`diapo__projects--card ${index === 0 ? 'active' : ''}`}
           >
             <div className="diapo__projects--card--image-container">
@@ -117,6 +101,7 @@ Diapo.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired, // Assurez-vous que l'ID est de type number
     }),
   ).isRequired,
   onProjectClick: PropTypes.func.isRequired,

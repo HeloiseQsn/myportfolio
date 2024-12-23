@@ -1,6 +1,6 @@
 [
   {
-    "id": "item-1",
+    "id": 1,
     "title": "Booki",
     "description": "Création de la page d'accueil d'une agence de voyage avec HTML et CSS",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/booki/bookiproj.webp",
@@ -19,7 +19,7 @@
     "skills": "Implémenter une interface responsive avec HTML et CSS, Intégrer du contenu conformément à une maquette avec HTML et CSS, Versionner son projet avec Git et Github, Utiliser flexbox pour créer du contenu flexible, Utiliser les balises sémantiques"
   },
   {
-    "id": "item-2",
+    "id": 2,
     "title": "Sophie Bluel",
     "description": "Création d'une page web dynamique avec Javascript",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/sophieBl/sophiebluelproj.webp",
@@ -39,7 +39,7 @@
     "skills": "Gérer les évènements utilisateurs avec JavaScript, Manipuler les éléments du DOM avec JavaScript, Récupérer les données utilisateur dans le JavaScript via des formulaires"
   },
   {
-    "id": "item-3",
+    "id": 3,
     "title": "Nina Carducci",
     "description": "Débugger et optimiser un site de photographe",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/ninaCard/ninacarducciproj.webp",
@@ -58,7 +58,7 @@
     "skills": "Optimiser les performances d'un site web, Débugger un site web grâce aux Chrome DevTools, Rédiger un cahier de recette pour tester un site"
   },
   {
-    "id": "item-4",
+    "id": 4,
     "title": "Kasa",
     "description": "Création d'une application web de location immobilière avec React",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/kasa/kasaproj.webp",
@@ -77,7 +77,7 @@
     "skills": "Initialiser une application avec Create-React-App, Configurer la navigation entre les pages de l'application avec React Router, Développer des éléments de l'interface d'un site web grâce à des composants React, Mettre en oeuvre des animations CSS, Développer une interface web avec Sass"
   },
   {
-    "id": "item-5",
+    "id": 5,
     "title": "Mon Vieux Grimoire",
     "description": "Développement du backend d'un site de notation de livres",
     "image": "https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/projects/MVG/MVGproj.webp",
@@ -97,7 +97,7 @@
     "skills": "Implémenter un modèle logique de données conformément à la règlementation, Mettre en oeuvre des opérations CRUD de manière sécurisée, Stocker des données de manière sécurisée"
   },
   {
-    "id": "item-6",
+    "id": 6,
     "title": "Mon portfolio",
     "description": "Création de mon portfolio",
     "image": "https://github.com/HeloiseQsn/myportfolio/blob/master/src/assets/images/projects/portfolio/portfolio.jpg?raw=true",
