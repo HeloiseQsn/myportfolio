@@ -7,7 +7,7 @@ function Title() {
     let textPos = 0 //début du texte = position 0
 
     function typewriter() {
-      const destination = document.getElementById('typedtext')
+      const destination = document.getElementById('title')
       if (textPos < text.length) {
         destination.innerHTML = text.substring(0, textPos + 1) + '_' //ajout d'une lettre suivi d'un curseur
         textPos++ // ajout de +1 à chaque lettre ajoutée
@@ -22,7 +22,7 @@ function Title() {
 
   return (
     <div className="title__container">
-      <h1 id="typedtext" className="title__container--text"></h1>
+      <h1 id="title" className="title__container--text"></h1>
     </div>
   )
 }
