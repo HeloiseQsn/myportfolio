@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { useSwipeable } from 'react-swipeable'
 import { useNavigate } from 'react-router-dom'
@@ -101,7 +101,7 @@ Diapo.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired, // Assurez-vous que l'ID est de type number
+      id: PropTypes.number.isRequired,
     }),
   ).isRequired,
   onProjectClick: PropTypes.func.isRequired,

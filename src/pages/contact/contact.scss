@@ -1,0 +1,83 @@
+@use '../../style/main.scss' as mainStyle;
+@use '../../style/variables.scss' as vars;
+@use '../../style/mixin.scss' as mixin;
+
+.contact-form {
+  padding: 5px;
+
+  .contact-form__content {
+    display: flex;
+    margin: 0 5px;
+    @include mixin.breakpoint(medium) {
+      flex-direction: column;
+    }
+    h2 {
+      margin-bottom: 0;
+    }
+    img {
+      width: 200px;
+      @include mixin.breakpoint(medium) {
+        width: 150px;
+        padding-bottom: 15px;
+      }
+      @include mixin.breakpoint(small) {
+        width: 100px;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      background-color: vars.$main-color;
+      margin: 0 50px;
+      padding: 20px;
+      width: calc(100% - 200px);
+      @include mixin.breakpoint(medium) {
+        width: calc(100% - 140px);
+      }
+      @include mixin.breakpoint(small) {
+        padding: 1.5rem;
+        margin: 0;
+        width: calc(100% - 3rem);
+        gap: 1.5rem;
+      }
+
+      .contact-form__content--labelinput {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        @include mixin.breakpoint(small) {
+          flex-direction: column;
+        }
+        label {
+          width: 20%;
+
+          @include mixin.breakpoint(small) {
+            width: calc(100% - 20px);
+            font-size: 0.75rem;
+            padding-bottom: 0.5rem;
+          }
+        }
+        input,
+        textarea {
+          width: 80%;
+          border-radius: 5px;
+          border: none;
+          @include mixin.breakpoint(small) {
+            width: calc(100% - 20px);
+          }
+        }
+        input {
+          height: 2rem;
+        }
+        textarea {
+          height: 5rem;
+          @include mixin.breakpoint(medium) {
+            height: 10rem;
+          }
+        }
+      }
+    }
+  }
+}
