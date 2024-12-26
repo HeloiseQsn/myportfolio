@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import './projects.scss'
 import ProjectModal from '../ProjectModal'
 import Diapo from '../Diapo'
@@ -48,14 +48,15 @@ function Projects() {
   const [selectedTools, setSelectedTools] = useState([])
   const [selectedProject, setSelectedProject] = useState(null)
 
-  const filterProjects = () => {
+  // Utilisation de useMemo pour éviter de recalculer filteredProjects à chaque render
+  const filteredProjects = useMemo(() => {
     if (selectedTools.length === 0) {
       return projectData
     }
     return projectData.filter((project) =>
       selectedTools.every((toolUrl) => project.tools.includes(toolUrl)),
     )
-  }
+  }, [selectedTools]) // Se déclenche uniquement lorsque selectedTools change
 
   const handleToolToggle = (toolUrl) => {
     setSelectedTools((prev) =>
@@ -76,8 +77,6 @@ function Projects() {
   const closeModal = () => {
     setSelectedProject(null)
   }
-
-  const filteredProjects = filterProjects()
 
   return (
     <div>
@@ -100,7 +99,7 @@ function Projects() {
                 e.key === 'Enter' && handleToolToggle(tool.logo)
               }
             >
-              <img src={tool.logo} alt={tool.name} />
+              <img src={tool.logo} alt={tool.name} loading="lazy" />
             </div>
           ))}
         </div>

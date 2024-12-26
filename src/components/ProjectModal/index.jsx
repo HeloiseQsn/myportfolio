@@ -4,7 +4,7 @@ import './projectmodal.scss'
 
 function ProjectModal({ project, closeModal }) {
   const handleOutsideClick = (event) => {
-    if (event.target.className === 'modal') {
+    if (event.target.closest('.modal')) {
       closeModal()
     }
   }
@@ -57,7 +57,7 @@ function ProjectModal({ project, closeModal }) {
             <h3>Outils utilisés</h3>
             <div className="modal__content--description--tools--logo">
               {project.tools.map((tool, index) => (
-                <img key={index} src={tool} alt={`outil ${index + 1}`} />
+                <img key={index} src={tool} alt={tool} />
               ))}
             </div>
           </div>

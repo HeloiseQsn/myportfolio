@@ -4,6 +4,11 @@ import Logodesktop from '../../assets/images/logo/Logo1250.webp'
 import Logomobile from '../../assets/images/logo/Logo500.webp'
 
 function Header({ openModal }) {
+  const handleContactClick = (e) => {
+    e.preventDefault()
+    openModal()
+  }
+
   return (
     <header>
       <picture>
@@ -16,10 +21,7 @@ function Header({ openModal }) {
           <li>
             <a
               href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                openModal()
-              }}
+              onClick={handleContactClick}
               aria-label="Ouvrir le formulaire de contact"
             >
               Contact

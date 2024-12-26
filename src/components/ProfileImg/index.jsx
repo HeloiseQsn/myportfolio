@@ -8,7 +8,6 @@ function ProfileImage() {
         src={profileImg}
         alt="Photo de profil de Héloïse Quinson"
         className="profile-img__container--photo"
-        aria-label="Photo de profil"
       />
     </div>
   )

@@ -5,8 +5,8 @@ function Footer() {
   return (
     <footer>
       <div>
-        <a href="#home" aria-label="Retour en haut de la page">
-          Retour haut de page
+        <a href="#home" aria-label="Retour au début de la page">
+          Retour en haut de la page
         </a>
       </div>
       <div className="Linkedinlink">
@@ -14,9 +14,9 @@ function Footer() {
           href="https://www.linkedin.com/in/h%C3%A9lo%C3%AFse-quinson-b5b5587b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Lien vers le profil LinkedIn de Héloïse Quinson"
+          aria-label="Consulter le profil LinkedIn de Héloïse Quinson"
         >
-          <img src={Linkedin} alt="LinkedIn" />
+          <img src={Linkedin} alt="Logo LinkedIn - Héloïse Quinson" />
         </a>
       </div>
     </footer>

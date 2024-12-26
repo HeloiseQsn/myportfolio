@@ -1,7 +1,6 @@
 import './contact.scss'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
 import emailjs from 'emailjs-com'
 import logoMail from '../../assets/images/logo/chatmail.svg'
 
@@ -14,6 +13,7 @@ function Contact() {
     message: '',
   })
   const [status, setStatus] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -22,6 +22,10 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    // Préparer l'envoi
+    setIsSubmitting(true)
+    setStatus('Envoi du message en cours...')
 
     // Paramètres EmailJS
     emailjs
@@ -35,21 +39,24 @@ function Contact() {
         (result) => {
           console.log(result.text)
           setStatus('Message envoyé avec succès!')
-          setFormData({ name: '', email: '', society: '', message: '' }) // Réinitialise le formulaire
-          setTimeout(() => navigate('/'), 2000) // LIEN VERS L'ACCUUEIL + AJOUTER LIEN DE RETOUR
+          setFormData({ name: '', email: '', society: '', message: '' }) // Réinitialiser le formulaire
+          setTimeout(() => navigate('/'), 2000) // Retour à l'accueil après 2 secondes
         },
         (error) => {
           console.log(error.text)
-          setStatus('Une erreur est survenue.')
+          setStatus('Une erreur est survenue. Veuillez réessayer.')
         },
       )
+      .finally(() => {
+        setIsSubmitting(false)
+      })
   }
 
   return (
     <div className="contact-form">
       <h2>Contactez-moi</h2>
       <div className="contact-form__content">
-        <img src={logoMail} alt="Logo de l'email" aria-hidden="true" />{' '}
+        <img src={logoMail} alt="Logo de l'email" aria-hidden="true" />
         <form onSubmit={handleSubmit}>
           <div className="contact-form__content--labelinput">
             <label htmlFor="name">Nom :</label>
@@ -99,13 +106,17 @@ function Contact() {
             />
           </div>
 
-          <button type="submit" aria-label="Envoyer votre message">
-            Envoyer
+          <button
+            type="submit"
+            aria-label="Envoyer votre message"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
           </button>
         </form>
       </div>
       {status && (
-        <p role="status" aria-live="polite">
+        <p role="status" aria-live="polite" aria-atomic="true">
           {status}
         </p>
       )}

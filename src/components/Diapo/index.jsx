@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { useSwipeable } from 'react-swipeable'
 import { useNavigate } from 'react-router-dom'
@@ -14,6 +14,7 @@ function Diapo({ projects, onProjectClick }) {
   const [isAnimating, setIsAnimating] = useState(false)
   const isMobile = IsMobile()
   const navigate = useNavigate()
+  const intervalRef = useRef(null)
 
   const prevPhoto = useCallback(() => {
     if (isAnimating) return
@@ -33,17 +34,17 @@ function Diapo({ projects, onProjectClick }) {
     if (isAnimating) {
       const timer = setTimeout(() => {
         setIsAnimating(false)
-      }, 500) // Durée de l'animation en millisecondes, ajustez selon vos besoins
+      }, 500) // Durée de l'animation en millisecondes
       return () => clearTimeout(timer)
     }
   }, [isAnimating])
 
   // Défilement automatique
   useEffect(() => {
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       nextPhoto()
-    }, 3000) // Intervalle de 3 secondes, ajustez selon vos besoins
-    return () => clearInterval(interval)
+    }, 3000) // Intervalle de 3 secondes
+    return () => clearInterval(intervalRef.current)
   }, [nextPhoto])
 
   const openProject = (project) => {
@@ -64,16 +65,16 @@ function Diapo({ projects, onProjectClick }) {
   const getVisibleProjects = () => {
     const start = currentIndex
     const end = (currentIndex + VISIBLE_ITEMS) % projects.length
-    if (start < end) {
-      return projects.slice(start, end)
-    } else {
-      return [...projects.slice(start), ...projects.slice(0, end)]
-    }
+    return start < end
+      ? projects.slice(start, end)
+      : [...projects.slice(start), ...projects.slice(0, end)]
   }
 
   if (!projects.length) {
     return <div>No projects available</div>
   }
+
+  const showNavigationButtons = projects.length > VISIBLE_ITEMS
 
   return (
     <div
@@ -82,13 +83,13 @@ function Diapo({ projects, onProjectClick }) {
       aria-live="polite"
       aria-atomic="true"
     >
-      {projects.length > VISIBLE_ITEMS && (
+      {showNavigationButtons && (
         <button
           className="diapo__button diapo__button--left"
           onClick={prevPhoto}
-          aria-label="Previous slide"
+          aria-label="Diapo précédent"
         >
-          <img src={leftArrow} alt="Previous arrow" />
+          <img src={leftArrow} alt="Flèche précédente" />
         </button>
       )}
       <div className="diapo__projects">
@@ -98,23 +99,23 @@ function Diapo({ projects, onProjectClick }) {
             onClick={() => openProject(project)}
             className={`diapo__projects--card ${index === 0 ? 'active' : ''}`}
             tabIndex={0}
-            aria-label={`Project ${index + 1}: ${project.title}`}
+            aria-label={`Projet ${index + 1}: ${project.title}`}
           >
             <div className="diapo__projects--card--image-container">
-              <img src={project.image} alt={`Project ${index + 1}`} />
+              <img src={project.image} alt={`Projet ${index + 1}`} />
             </div>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
           </div>
         ))}
       </div>
-      {projects.length > VISIBLE_ITEMS && (
+      {showNavigationButtons && (
         <button
           className="diapo__button diapo__button--right"
           onClick={nextPhoto}
-          aria-label="Next slide"
+          aria-label="Diapo suivante"
         >
-          <img src={rightArrow} alt="Next arrow" />
+          <img src={rightArrow} alt="Flèche suivante" />
         </button>
       )}
     </div>

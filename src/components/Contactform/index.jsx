@@ -58,7 +58,6 @@ function ContactForm({ closeModal }) {
               value={formData.name}
               onChange={handleChange}
               required
-              aria-required="true"
               aria-describedby="nameDesc"
             />
           </div>
@@ -71,7 +70,6 @@ function ContactForm({ closeModal }) {
               value={formData.email}
               onChange={handleChange}
               required
-              aria-required="true"
               aria-describedby="emailDesc"
             />
           </div>
@@ -84,7 +82,6 @@ function ContactForm({ closeModal }) {
               value={formData.society}
               onChange={handleChange}
               required
-              aria-required="true"
               aria-describedby="societyDesc"
             />
           </div>
@@ -96,7 +93,6 @@ function ContactForm({ closeModal }) {
               value={formData.message}
               onChange={handleChange}
               required
-              aria-required="true"
               aria-describedby="messageDesc"
             />
           </div>
