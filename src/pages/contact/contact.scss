@@ -11,8 +11,28 @@
     @include mixin.breakpoint(medium) {
       flex-direction: column;
     }
-    h2 {
-      margin-bottom: 0;
+    h1 {
+      font-family: 'Work sans', cursive;
+      font-weight: 300;
+      font-size: 2rem;
+      position: relative;
+      padding-bottom: 40px;
+      margin-bottom: 20px;
+
+      @include mixin.breakpoint(small) {
+        font-size: 1.5rem;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #000;
+        margin-bottom: 20px;
+      }
     }
     img {
       width: 200px;

@@ -1,5 +1,9 @@
 function Error() {
-  return <div>Page error</div>
+  return (
+    <div>
+      <p></p>404 not found
+    </div>
+  )
 }
 
 export default Error
