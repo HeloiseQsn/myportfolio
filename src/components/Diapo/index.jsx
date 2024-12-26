@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useSwipeable } from 'react-swipeable'
 import { useNavigate } from 'react-router-dom'
@@ -12,8 +12,8 @@ const VISIBLE_ITEMS = 4
 function Diapo({ projects, onProjectClick }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
-  const isMobile = IsMobile() // Utilisation du hook useIsMobile
-  const navigate = useNavigate() // Redirection vers la page projet
+  const isMobile = IsMobile()
+  const navigate = useNavigate()
 
   const prevPhoto = useCallback(() => {
     if (isAnimating) return
@@ -28,6 +28,15 @@ function Diapo({ projects, onProjectClick }) {
     setIsAnimating(true)
     setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
   }, [isAnimating, projects.length])
+
+  useEffect(() => {
+    if (isAnimating) {
+      const timer = setTimeout(() => {
+        setIsAnimating(false)
+      }, 500)
+      return () => clearTimeout(timer)
+    }
+  }, [isAnimating])
 
   const openProject = (project) => {
     if (isMobile) {
