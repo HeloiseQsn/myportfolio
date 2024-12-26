@@ -58,7 +58,11 @@ function Projects() {
   }
 
   const handleToolToggle = (toolUrl) => {
-    setSelectedTools([toolUrl])
+    setSelectedTools((prev) =>
+      prev.includes(toolUrl)
+        ? prev.filter((url) => url !== toolUrl)
+        : [...prev, toolUrl],
+    )
   }
 
   const handleClearFilters = () => {
@@ -78,12 +82,23 @@ function Projects() {
   return (
     <div>
       <div className="projects__filters">
-        <div className="projects__filters--tools">
+        <div
+          className="projects__filters--tools"
+          role="region"
+          aria-labelledby="tools-filter"
+        >
           {allTools.map((tool) => (
             <div
               key={tool.name}
               className={`projects__filters--tools--item ${selectedTools.includes(tool.logo) ? 'active' : ''}`}
               onClick={() => handleToolToggle(tool.logo)}
+              role="button"
+              aria-pressed={selectedTools.includes(tool.logo)}
+              tabIndex="0"
+              aria-label={`Filtrer par ${tool.name}`}
+              onKeyDown={(e) =>
+                e.key === 'Enter' && handleToolToggle(tool.logo)
+              }
             >
               <img src={tool.logo} alt={tool.name} />
             </div>
@@ -93,6 +108,7 @@ function Projects() {
         <button
           className="projects__filters--clear"
           onClick={handleClearFilters}
+          aria-label="Réinitialiser les filtres"
         >
           Réinitialiser les filtres
         </button>

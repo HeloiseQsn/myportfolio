@@ -29,36 +29,39 @@ function Carousel({ imagesDiap = [] }) {
   }
 
   return (
-    <div className="carrousel">
-      {' '}
+    <div className="carrousel" role="region" aria-label="Carousel d'images">
       {imagesDiap.length > 1 && ( // Si plus d'une image, affiche le bouton pour aller à la photo précédente
         <button
           className="carrousel__button carrousel__button--left"
           onClick={prevPhoto} // au clic, appel de la fonction prev photo
+          aria-label="Image précédente"
         >
-          <img src={leftArrow} alt="flèche précédente" />{' '}
+          <img src={leftArrow} alt="flèche précédente" />
         </button>
       )}
       <div className="carrousel__images">
-        {' '}
         {imagesDiap.map((image, index) => (
           <img
             key={index}
             src={image}
-            alt={`Img ${index + 1}`}
+            alt={`Image ${index + 1} sur ${imagesDiap.length}`}
             className={`carrousel__image ${index === currentIndex ? 'active' : ''}`}
+            aria-hidden={index !== currentIndex}
           />
         ))}
       </div>
       {imagesDiap.length > 1 && ( // Si plus d'une image, affiche le numéro de l'image courante / total des images
-        <div className="carrousel__numslide">{`${currentIndex + 1}/${imagesDiap.length}`}</div>
+        <div className="carrousel__numslide" aria-live="polite">
+          {`${currentIndex + 1} / ${imagesDiap.length}`}
+        </div>
       )}
       {imagesDiap.length > 1 && ( // Si plus d'une image, affiche le bouton pour aller à la photo suivante
         <button
           className="carrousel__button carrousel__button--right"
           onClick={nextPhoto} // Appelle 'nextPhoto' au clic
+          aria-label="Image suivante"
         >
-          <img src={rightArrow} alt="flèche suivante" />{' '}
+          <img src={rightArrow} alt="flèche suivante" />
         </button>
       )}
     </div>

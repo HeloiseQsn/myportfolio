@@ -47,8 +47,8 @@ function ContactForm({ closeModal }) {
     <div className="contact-form">
       <h2>Contactez-moi</h2>
       <div className="contact-form__content">
-        <img src={logoMail}></img>
-        <form onSubmit={handleSubmit}>
+        <img src={logoMail} alt="Logo Email" />
+        <form onSubmit={handleSubmit} aria-labelledby="formTitle">
           <div className="contact-form__content--labelinput">
             <label htmlFor="name">Nom :</label>
             <input
@@ -58,6 +58,8 @@ function ContactForm({ closeModal }) {
               value={formData.name}
               onChange={handleChange}
               required
+              aria-required="true"
+              aria-describedby="nameDesc"
             />
           </div>
           <div className="contact-form__content--labelinput">
@@ -69,6 +71,8 @@ function ContactForm({ closeModal }) {
               value={formData.email}
               onChange={handleChange}
               required
+              aria-required="true"
+              aria-describedby="emailDesc"
             />
           </div>
           <div className="contact-form__content--labelinput">
@@ -80,6 +84,8 @@ function ContactForm({ closeModal }) {
               value={formData.society}
               onChange={handleChange}
               required
+              aria-required="true"
+              aria-describedby="societyDesc"
             />
           </div>
           <div className="contact-form__content--labelinput">
@@ -90,13 +96,15 @@ function ContactForm({ closeModal }) {
               value={formData.message}
               onChange={handleChange}
               required
+              aria-required="true"
+              aria-describedby="messageDesc"
             />
           </div>
 
           <button type="submit">Envoyer</button>
         </form>
       </div>
-      {status && <p>{status}</p>}
+      {status && <p aria-live="polite">{status}</p>}
     </div>
   )
 }
@@ -104,4 +112,5 @@ function ContactForm({ closeModal }) {
 ContactForm.propTypes = {
   closeModal: PropTypes.func.isRequired,
 }
+
 export default ContactForm

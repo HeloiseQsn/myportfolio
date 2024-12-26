@@ -1,7 +1,7 @@
 function Error() {
   return (
     <div>
-      <p></p>404 not found
+      <p>404 not found</p>
     </div>
   )
 }

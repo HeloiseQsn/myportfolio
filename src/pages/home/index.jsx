@@ -1,6 +1,6 @@
 import './home.scss'
 import Modal from 'react-modal'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ProfileImage from '../../components/ProfileImg'
 import Title from '../../components/Title'
@@ -26,7 +26,18 @@ function Home() {
       setIsModalOpen(true)
     }
   }
-  const closeModal = () => setIsModalOpen(false)
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
+
+  // Focus sur la modal lors de son ouverture pour améliorer l'accessibilité
+  useEffect(() => {
+    if (isModalOpen) {
+      const firstInput = document.querySelector('input, textarea, button')
+      firstInput && firstInput.focus() // Déplacer le focus sur le premier champ de la modal
+    }
+  }, [isModalOpen])
 
   return (
     <div>
@@ -36,7 +47,7 @@ function Home() {
         <Title />
         <h2 id="projects">Mes projets</h2>
         <Projects />
-        <h2 id="about">Qui suis-je ? </h2>
+        <h2 id="about">Qui suis-je ?</h2>
         <div className="about">
           <p>
             Je m&apos;appelle Héloïse, j&apos;ai 34 ans et je suis en
@@ -46,7 +57,7 @@ function Home() {
             aura duré un an, le temps de me rendre compte qu&apos;à 18 ans, je
             n&apos;avais pas envie de continuer à travailler quand les autres ne
             travaillent pas , et que j&apos;avais envie de découvrir autre
-            chose.{' '}
+            chose.
           </p>
           <p>
             J&apos;ai donc repris une voie un peu plus conventionnelle, en
@@ -54,14 +65,14 @@ function Home() {
             vers les Ressources Humaines. Après 3 ans d&apos;alternance dans le
             cadre d&apos;une licence et d&apos;un master RH, j&apos;ai occupé
             pendant 7 ans des postes d&apos;Assistante RH en industries
-            agro-alimentaire (coopérative laitière) et de production de cartons.{' '}
-          </p>{' '}
+            agro-alimentaire (coopérative laitière) et de production de cartons.
+          </p>
           <p>
             Je dois avouer que les dernières années, je m&apos;arrangeais
             toujours pour trouver des petites choses à développer à mon niveau
             (notamment sur Excel) pour faciliter mon quotidien et celui de mon
-            équipe. Je dois aussi avouer que je préfèrais les développer que les
-            utiliser 🤫.{' '}
+            équipe. Je dois aussi avouer que je préférais les développer que les
+            utiliser 🤫.
           </p>
           <p>
             Puis je suis devenue maman, une merveilleuse expérience mais bien
@@ -74,10 +85,11 @@ function Home() {
               href="https://openclassrooms.com/fr/paths/899-developpeur-web?utm_source=google&utm_medium=cpc&utm_campaign=display_google_fr_fr_b2c_prospecting_perf-max-track-developpement_230117_00_adgroup-is-&utm_source=google&utm_medium=cpc&gad_source=1&gclid=CjwKCAiA34S7BhAtEiwACZzv4dRHEparGKGDAoIEFsUnmXbKGEzCVSzvf3FaaCFGQ1ikExIDu4D9LhoCBqoQAvD_BwE"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Formation Développement web d'OpenClassRoom"
             >
-              formation Développement web{' '}
+              formation Développement web
             </a>{' '}
-            d&apos;OpenClassRoom.{' '}
+            d&apos;OpenClassRoom.
           </p>
           <p>
             Je souhaite désormais intégrer une formation Bac +3 en contrat de
@@ -88,15 +100,27 @@ function Home() {
           </p>
         </div>
         <div className="contact">
-          <button onClick={openModal}>Me contacter</button>
+          <button
+            onClick={openModal}
+            aria-label="Ouvrir le formulaire de contact"
+          >
+            Me contacter
+          </button>
         </div>
         <Modal
           isOpen={isModalOpen}
           onRequestClose={closeModal}
           contentLabel="Formulaire de contact"
+          aria-labelledby="contact-modal-title"
+          aria-describedby="contact-modal-description"
         >
           <div className="close">
-            <button onClick={closeModal}>Fermer</button>
+            <button
+              onClick={closeModal}
+              aria-label="Fermer la fenêtre de contact"
+            >
+              Fermer
+            </button>
           </div>
           <ContactForm closeModal={closeModal} />
         </Modal>

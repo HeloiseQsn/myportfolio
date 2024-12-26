@@ -10,13 +10,24 @@ function ProjectModal({ project, closeModal }) {
   }
 
   return (
-    <div className="modal" onClick={handleOutsideClick}>
+    <div
+      className="modal"
+      onClick={handleOutsideClick}
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      aria-hidden="false"
+    >
       <div className="modal__content">
         <div className="close">
-          <button onClick={closeModal}>Fermer</button>
+          <button onClick={closeModal} aria-label="Fermer la fenêtre modale">
+            Fermer
+          </button>
         </div>
-        <h2>{project.title}</h2>
-        <p className="modal__content--subtitle">{project.description}</p>
+        <h2 id="modal-title">{project.title}</h2>
+        <p id="modal-description" className="modal__content--subtitle">
+          {project.description}
+        </p>
 
         <Carousel imagesDiap={project.imagesDiap} />
 
@@ -29,6 +40,7 @@ function ProjectModal({ project, closeModal }) {
               className="githubLink"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Accéder aux livrables du projet sur Github"
             >
               Accéder aux livrables du projet sur Github
             </a>
@@ -45,7 +57,7 @@ function ProjectModal({ project, closeModal }) {
             <h3>Outils utilisés</h3>
             <div className="modal__content--description--tools--logo">
               {project.tools.map((tool, index) => (
-                <img key={index} src={tool} alt={`tool-${index}`} />
+                <img key={index} src={tool} alt={`outil ${index + 1}`} />
               ))}
             </div>
           </div>

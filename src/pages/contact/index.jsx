@@ -49,7 +49,7 @@ function Contact() {
     <div className="contact-form">
       <h2>Contactez-moi</h2>
       <div className="contact-form__content">
-        <img src={logoMail}></img>
+        <img src={logoMail} alt="Logo de l'email" aria-hidden="true" />{' '}
         <form onSubmit={handleSubmit}>
           <div className="contact-form__content--labelinput">
             <label htmlFor="name">Nom :</label>
@@ -60,6 +60,7 @@ function Contact() {
               value={formData.name}
               onChange={handleChange}
               required
+              aria-label="Entrez votre nom"
             />
           </div>
           <div className="contact-form__content--labelinput">
@@ -71,6 +72,7 @@ function Contact() {
               value={formData.email}
               onChange={handleChange}
               required
+              aria-label="Entrez votre email"
             />
           </div>
           <div className="contact-form__content--labelinput">
@@ -82,6 +84,7 @@ function Contact() {
               value={formData.society}
               onChange={handleChange}
               required
+              aria-label="Entrez le nom de votre entreprise"
             />
           </div>
           <div className="contact-form__content--labelinput">
@@ -92,13 +95,20 @@ function Contact() {
               value={formData.message}
               onChange={handleChange}
               required
+              aria-label="Entrez votre message"
             />
           </div>
 
-          <button type="submit">Envoyer</button>
+          <button type="submit" aria-label="Envoyer votre message">
+            Envoyer
+          </button>
         </form>
       </div>
-      {status && <p>{status}</p>}
+      {status && (
+        <p role="status" aria-live="polite">
+          {status}
+        </p>
+      )}
     </div>
   )
 }

@@ -11,7 +11,7 @@ function Header({ openModal }) {
         <source srcSet={Logomobile} media="(max-width: 830px)" sizes="146px" />
         <img src={Logodesktop} alt="Logo Héloïse Quinson" />
       </picture>
-      <nav>
+      <nav aria-label="Navigation principale">
         <ul>
           <li>
             <a
@@ -20,15 +20,20 @@ function Header({ openModal }) {
                 e.preventDefault()
                 openModal()
               }}
+              aria-label="Ouvrir le formulaire de contact"
             >
-              Contact{' '}
+              Contact
             </a>
           </li>
           <li>
-            <a href="#projects">Mes projets</a>
+            <a href="#projects" aria-label="Voir mes projets">
+              Mes projets
+            </a>
           </li>
           <li>
-            <a href="#about">Qui suis-je ?</a>
+            <a href="#about" aria-label="En savoir plus">
+              Qui suis-je ?
+            </a>
           </li>
         </ul>
       </nav>

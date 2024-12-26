@@ -76,13 +76,19 @@ function Diapo({ projects, onProjectClick }) {
   }
 
   return (
-    <div className="diapo" {...swipeHandlers}>
+    <div
+      className="diapo"
+      {...swipeHandlers}
+      aria-live="polite"
+      aria-atomic="true"
+    >
       {projects.length > VISIBLE_ITEMS && (
         <button
           className="diapo__button diapo__button--left"
           onClick={prevPhoto}
+          aria-label="Previous slide"
         >
-          <img src={leftArrow} alt="previous arrow" />
+          <img src={leftArrow} alt="Previous arrow" />
         </button>
       )}
       <div className="diapo__projects">
@@ -91,6 +97,8 @@ function Diapo({ projects, onProjectClick }) {
             key={project.id}
             onClick={() => openProject(project)}
             className={`diapo__projects--card ${index === 0 ? 'active' : ''}`}
+            tabIndex={0}
+            aria-label={`Project ${index + 1}: ${project.title}`}
           >
             <div className="diapo__projects--card--image-container">
               <img src={project.image} alt={`Project ${index + 1}`} />
@@ -104,8 +112,9 @@ function Diapo({ projects, onProjectClick }) {
         <button
           className="diapo__button diapo__button--right"
           onClick={nextPhoto}
+          aria-label="Next slide"
         >
-          <img src={rightArrow} alt="next arrow" />
+          <img src={rightArrow} alt="Next arrow" />
         </button>
       )}
     </div>
