@@ -6,18 +6,22 @@ import projectsData from '../../datas/projectData.json'
 import Carousel from '../../components/Carousel'
 
 function ProjectPage() {
-  const { id } = useParams()
-  const navigate = useNavigate()
-  const [project, setProject] = useState(null)
+  const { id } = useParams() // Récupère le paramètre 'id' de l'URL
+  const navigate = useNavigate() // Hook pour naviguer entre les pages
+  const [project, setProject] = useState(null) // État pour stocker les données du projet
 
   useEffect(() => {
-    const project = projectsData.find((p) => p.id === parseInt(id))
+    const project = projectsData.find((p) => p.id === parseInt(id)) // Trouve le projet avec l'ID correspondant
     if (project) {
-      setProject(project)
+      setProject(project) // Si le projet est trouvé, met à jour l'état
     } else {
-      navigate('/')
+      navigate('/') // Si le projet n'est pas trouvé, redirige vers la page d'accueil
     }
-  }, [id, navigate])
+  }, [id, navigate]) // Exécute cet effet à chaque changement de 'id' ou 'navigate'
+
+  if (!project) {
+    return <div>Chargement...</div> // Affiche un indicateur de chargement si le projet n'est pas encore disponible
+  }
 
   return (
     <div className="project-page">
