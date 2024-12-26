@@ -33,10 +33,18 @@ function Diapo({ projects, onProjectClick }) {
     if (isAnimating) {
       const timer = setTimeout(() => {
         setIsAnimating(false)
-      }, 500)
+      }, 500) // Durée de l'animation en millisecondes, ajustez selon vos besoins
       return () => clearTimeout(timer)
     }
   }, [isAnimating])
+
+  // Défilement automatique
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextPhoto()
+    }, 3000) // Intervalle de 3 secondes, ajustez selon vos besoins
+    return () => clearInterval(interval)
+  }, [nextPhoto])
 
   const openProject = (project) => {
     if (isMobile) {

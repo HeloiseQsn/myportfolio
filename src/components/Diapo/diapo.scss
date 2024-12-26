@@ -37,7 +37,7 @@
     justify-content: center;
     overflow: hidden;
     position: relative;
-    width: 100%;
+    width: 90%;
     will-change: transform;
 
     @include mixin.breakpoint(medium) {
@@ -49,7 +49,7 @@
     }
 
     &--card {
-      flex: 0 0 22%;
+      flex: 0 0 20%;
       margin: 3% 1%;
       height: 380px;
       display: flex;
