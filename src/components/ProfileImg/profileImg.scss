@@ -3,8 +3,7 @@
 @use '../../style/mixin.scss' as mixin;
 
 .profile-img__container {
-  display: flex;
-  justify-content: center;
+  @include mixin.flexRowCenterXY;
 
   &--photo {
     width: 300px;

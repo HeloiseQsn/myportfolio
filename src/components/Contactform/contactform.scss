@@ -51,8 +51,7 @@
 
         .contact-form__content--labelinput {
           width: 100%;
-          display: flex;
-          justify-content: space-between;
+          @include mixin.flexRowSpaceBet;
           @include mixin.breakpoint(small) {
             flex-direction: column;
           }

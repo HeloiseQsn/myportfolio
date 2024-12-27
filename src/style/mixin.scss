@@ -18,3 +18,15 @@
   display: flex;
   justify-content: space-between;
 }
+
+@mixin flexColSpaceBet {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@mixin flexRowCenterXY {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

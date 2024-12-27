@@ -22,8 +22,7 @@
   }
 }
 .contact {
-  display: flex;
-  justify-content: center;
+  @include mixin.flexRowCenterXY;
   padding: 15px;
   button {
     background-color: vars.$main-color;

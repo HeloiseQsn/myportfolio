@@ -12,8 +12,7 @@ header {
   padding: 20px;
 
   @include mixin.breakpoint(small) {
-    flex-direction: column;
-    justify-content: space-between;
+    @include mixin.flexColSpaceBet;
   }
 
   picture {

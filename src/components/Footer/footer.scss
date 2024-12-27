@@ -3,8 +3,7 @@
 @use '../../style/mixin.scss' as mixin;
 
 footer {
-  display: flex;
-  justify-content: space-between;
+  @include mixin.flexRowSpaceBet;
   align-items: center;
   background-color: vars.$main-color;
   padding: 20px;

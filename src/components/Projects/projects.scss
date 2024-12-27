@@ -5,9 +5,8 @@
 //filtres
 
 .projects__filters {
-  display: flex;
+  @include mixin.flexRowSpaceBet;
   align-items: center;
-  justify-content: space-between;
   @include mixin.breakpoint(large) {
     flex-wrap: wrap;
   }
