@@ -25,7 +25,7 @@ function ProjectPage() {
 
   return (
     <div className="project-page">
-      <button onClick={() => navigate(-1)}>Retour</button>
+      <button onClick={() => navigate('/')}>Retour</button>
       <h1>{project.title}</h1>
       <p className="project-page__subtitle">{project.description}</p>
       <Carousel imagesDiap={project.imagesDiap} />
