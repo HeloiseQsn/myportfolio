@@ -71,7 +71,11 @@ function Diapo({ projects, onProjectClick }) {
   }
 
   if (!projects.length) {
-    return <div>No projects available</div>
+    return (
+      <div className="error">
+        Pas de projet disponible avec ces technologies combinées.
+      </div>
+    )
   }
 
   const showNavigationButtons = projects.length > VISIBLE_ITEMS
