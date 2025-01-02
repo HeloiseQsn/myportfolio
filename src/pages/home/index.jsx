@@ -96,10 +96,10 @@ function Home() {
             d&apos;OpenClassRoom.
           </p>
           <p>
-            Je souhaite désormais trouver mon premier poste sur le bassin
-            Rennais. Si vous êtes à la recherche d&apos;une candidate motivée et
-            enthousiaste, qui ne demande qu&apos;à apprendre davantage,
-            n&apos;hésitez pas à me contacter 😊 !
+            Je souhaite désormais trouver mon premier poste de Développeuse sur
+            le bassin Rennais. Si vous êtes à la recherche d&apos;une candidate
+            motivée et enthousiaste, qui ne demande qu&apos;à apprendre
+            davantage, n&apos;hésitez pas à me contacter 😊 !
           </p>
         </div>
         <div className="contact">
