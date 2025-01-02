@@ -5,44 +5,49 @@ import emailjs from 'emailjs-com'
 import logoMail from '../../assets/images/logo/chatmail.svg'
 
 function ContactForm({ closeModal }) {
+  // Déclaration d'un état pour garder la trace des données du formulaire, par défaut tout est vide
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     society: '',
     message: '',
   })
+  // Déclaration d'un état pour garder la trace du statut du formulaire (succès ou erreur)
   const [status, setStatus] = useState('')
 
+  // Fonction pour gérer les changements dans les champs du formulaire
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target // Extraction du nom et de la valeur du champ modifié
+    // Mise à jour des données du formulaire avec la nouvelle valeur
     setFormData({ ...formData, [name]: value })
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault() // Empêche le comportement par défaut du formulaire (rechargement de la page)
 
-    // Paramètres EmailJS
+    // Utilisation de EmailJS pour envoyer le formulaire
     emailjs
       .sendForm(
-        'service_lp7xxr6',
-        'template_lg2s5dt',
+        'service_lp7xxr6', // Identifiant du service EmailJS
+        'template_lg2s5dt', // Identifiant du modèle EmailJS
         e.target,
-        'GGPgronRGkUHO26Jf',
+        'GGPgronRGkUHO26Jf', // Clé publique utilisateur EmailJS
       )
       .then(
         (result) => {
-          console.log(result.text)
-          setStatus('Message envoyé avec succès!')
+          console.log(result.text) // Affiche le texte du résultat de l'envoi
+          setStatus('Message envoyé avec succès!') // Met à jour le statut en cas de succès
           setFormData({ name: '', email: '', society: '', message: '' }) // Réinitialise le formulaire
-          setTimeout(() => closeModal(), 2000) // Ferme la modale après un délai
+          setTimeout(() => closeModal(), 2000) // Ferme la modale après un délai de 2 secondes
         },
         (error) => {
-          console.log(error.text)
-          setStatus('Une erreur est survenue.')
+          console.log(error.text) // Affiche le texte de l'erreur
+          setStatus('Une erreur est survenue.') // Met à jour le statut en cas d'erreur
         },
       )
   }
 
+  // Rendu du composant ContactForm
   return (
     <div className="contact-form">
       <h2>Contactez-moi</h2>
@@ -96,17 +101,18 @@ function ContactForm({ closeModal }) {
               aria-describedby="messageDesc"
             />
           </div>
-
           <button type="submit">Envoyer</button>
         </form>
       </div>
-      {status && <p aria-live="polite">{status}</p>}
+      {status && <p aria-live="polite">{status}</p>}{' '}
+      {/* Affichage du statut si disponible */}
     </div>
   )
 }
 
+// Définition des propTypes pour valider les props du composant
 ContactForm.propTypes = {
   closeModal: PropTypes.func.isRequired,
 }
 
-export default ContactForm
+export default ContactForm // Exportation du composant pour l'utiliser dans d'autres fichiers

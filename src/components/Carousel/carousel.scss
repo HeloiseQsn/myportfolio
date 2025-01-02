@@ -28,7 +28,7 @@
   }
 
   &__image {
-    display: none;
+    display: none; // Cache par défaut toutes les images du carousel
 
     &.active {
       display: block;

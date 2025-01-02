@@ -5,11 +5,11 @@ function IsMobile() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 800)
+      setIsMobile(window.innerWidth < 800) //si largeur écran <800 px => SetisMobile = true
     }
 
-    handleResize() // Initial check
-    window.addEventListener('resize', handleResize)
+    handleResize()
+    window.addEventListener('resize', handleResize) //écouteur d'évènement lorsque la taille de l'écran change
 
     return () => window.removeEventListener('resize', handleResize)
   }, [])

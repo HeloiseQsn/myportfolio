@@ -5,7 +5,10 @@ import emailjs from 'emailjs-com'
 import logoMail from '../../assets/images/logo/chatmail.svg'
 
 function Contact() {
+  // Utilisation du hook useNavigate pour la redirection après l'envoi du formulaire
   const navigate = useNavigate()
+
+  // Initialisation des états pour gérer les données du formulaire, le statut de l'envoi et l'état de soumission
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,34 +18,38 @@ function Contact() {
   const [status, setStatus] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  // Gestion des changements dans les champs du formulaire
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData({ ...formData, [name]: value })
   }
 
+  // Gestion de la soumission du formulaire
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // Préparer l'envoi
+    // Indication de l'état de soumission en cours
     setIsSubmitting(true)
     setStatus('Envoi du message en cours...')
 
-    // Paramètres EmailJS
+    // Envoi du formulaire via EmailJS
     emailjs
       .sendForm(
-        'service_lp7xxr6',
-        'template_lg2s5dt',
-        e.target,
-        'GGPgronRGkUHO26Jf',
+        'service_lp7xxr6', // Identifiant du service EmailJS
+        'template_lg2s5dt', // Identifiant du template EmailJS
+        e.target, // Formulaire cible
+        'GGPgronRGkUHO26Jf', // Clé publique EmailJS
       )
       .then(
         (result) => {
+          // Succès de l'envoi
           console.log(result.text)
           setStatus('Message envoyé avec succès!')
-          setFormData({ name: '', email: '', society: '', message: '' }) // Réinitialiser le formulaire
-          setTimeout(() => navigate('/'), 2000) // Retour à l'accueil après 2 secondes
+          setFormData({ name: '', email: '', society: '', message: '' }) // Réinitialisation du formulaire
+          setTimeout(() => navigate('/'), 2000) // Redirection vers l'accueil après 2 secondes
         },
         (error) => {
+          // Échec de l'envoi
           console.log(error.text)
           setStatus('Une erreur est survenue. Veuillez réessayer.')
         },

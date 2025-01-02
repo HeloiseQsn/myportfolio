@@ -10,32 +10,36 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import IsMobile from '../../utils/isMobile'
 
+// Configuration de l'élément racine pour la modale afin de respecter les règles d'accessibilité
 Modal.setAppElement('#root')
 
 function Home() {
+  // État pour contrôler l'ouverture et la fermeture de la modale de contact
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const isMobile = IsMobile() // Vérification de la taille de l'écran
-  const navigate = useNavigate() // Utilisation du hook de redirection
+  // Vérification si l'utilisateur utilise un appareil mobile
+  const isMobile = IsMobile()
+  // Hook pour la navigation entre les pages
+  const navigate = useNavigate()
 
+  // Fonction pour ouvrir la modale de contact ou rediriger vers la page contact sur mobile
   const openModal = () => {
     if (isMobile) {
-      // Redirection vers la page Contact si sur mobile
-      navigate('/contact')
+      navigate('/contact') // Redirection sur mobile
     } else {
-      // Sinon, ouvrir la modale sur desktop
-      setIsModalOpen(true)
+      setIsModalOpen(true) // Ouverture de la modale sur desktop
     }
   }
 
+  // Fonction pour fermer la modale
   const closeModal = () => {
     setIsModalOpen(false)
   }
 
-  // Focus sur la modal lors de son ouverture pour améliorer l'accessibilité
+  // Effet pour gérer le focus sur le premier élément de la modale lors de son ouverture
   useEffect(() => {
     if (isModalOpen) {
       const firstInput = document.querySelector('input, textarea, button')
-      firstInput && firstInput.focus() // Déplacer le focus sur le premier champ de la modal
+      firstInput && firstInput.focus() // Mise au focus du premier champ de la modale
     }
   }, [isModalOpen])
 
@@ -92,11 +96,10 @@ function Home() {
             d&apos;OpenClassRoom.
           </p>
           <p>
-            Je souhaite désormais intégrer une formation Bac +3 en contrat de
-            professionnalisation sur le bassin Rennais. Si vous êtes à la
-            recherche d&apos;une candidate motivée et enthousiaste, qui ne
-            demande qu&apos;à apprendre davantage, n&apos;hésitez pas à me
-            contacter 😊 !
+            Je souhaite désormais trouver mon premier poste sur le bassin
+            Rennais. Si vous êtes à la recherche d&apos;une candidate motivée et
+            enthousiaste, qui ne demande qu&apos;à apprendre davantage,
+            n&apos;hésitez pas à me contacter 😊 !
           </p>
         </div>
         <div className="contact">

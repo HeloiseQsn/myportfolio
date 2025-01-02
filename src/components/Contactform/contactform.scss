@@ -3,11 +3,12 @@
 @use '../../style/mixin.scss' as mixin;
 
 .ReactModal__Overlay {
-  // classes react-modal
+  // Classes react-modal
   background-color: grey !important;
   z-index: 3;
+
   .ReactModal__Content {
-    // classes react-modal
+    // Classes react-modal
     background-color: white !important;
     opacity: 1;
 
@@ -16,9 +17,11 @@
       @include mixin.breakpoint(medium) {
         flex-direction: column;
       }
+
       h2 {
         margin-bottom: 0;
       }
+
       img {
         width: 200px;
         @include mixin.breakpoint(medium) {
@@ -29,6 +32,7 @@
           width: 100px;
         }
       }
+
       form {
         display: flex;
         flex-direction: column;
@@ -55,15 +59,16 @@
           @include mixin.breakpoint(small) {
             flex-direction: column;
           }
+
           label {
             width: 20%;
-
             @include mixin.breakpoint(small) {
               width: calc(100% - 20px);
               font-size: 0.75rem;
               padding-bottom: 0.5rem;
             }
           }
+
           input,
           textarea {
             width: 80%;
@@ -73,9 +78,11 @@
               width: calc(100% - 20px);
             }
           }
+
           input {
             height: 2rem;
           }
+
           textarea {
             height: 5rem;
             @include mixin.breakpoint(medium) {

@@ -4,8 +4,9 @@ import './projectmodal.scss'
 
 function ProjectModal({ project, closeModal }) {
   const handleOutsideClick = (event) => {
+    // Si l'élément cliqué est à l'intérieur de la modale, ne rien faire
     if (event.target.closest('.modal')) {
-      closeModal()
+      closeModal() // Sinon, fermer la modale
     }
   }
 
@@ -67,7 +68,6 @@ function ProjectModal({ project, closeModal }) {
   )
 }
 
-// Validation des props
 ProjectModal.propTypes = {
   project: PropTypes.shape({
     title: PropTypes.string.isRequired,

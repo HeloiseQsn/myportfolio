@@ -3,10 +3,8 @@ import './projects.scss'
 import ProjectModal from '../ProjectModal'
 import Diapo from '../Diapo'
 
-// Importation des données des projets
 import projectData from '../../datas/projectData.json'
 
-// URLs des images de logos
 const CSS3 =
   'https://raw.githubusercontent.com/HeloiseQsn/myportfolio/refs/heads/master/src/assets/images/tools/CSS3.webp'
 const Express =
@@ -45,47 +43,55 @@ const allTools = [
 ]
 
 function Projects() {
-  const [selectedTools, setSelectedTools] = useState([])
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedTools, setSelectedTools] = useState([]) // État pour les outils sélectionnés
+  const [selectedProject, setSelectedProject] = useState(null) // État pour le projet sélectionné
 
   // Utilisation de useMemo pour éviter de recalculer filteredProjects à chaque render
   const filteredProjects = useMemo(() => {
     if (selectedTools.length === 0) {
-      return projectData
+      return projectData // Si aucun outil n'est sélectionné, afficher tous les projets
     }
+    // Filtrer les projets en fonction des outils sélectionnés
     return projectData.filter((project) =>
       selectedTools.every((toolUrl) => project.tools.includes(toolUrl)),
     )
   }, [selectedTools]) // Se déclenche uniquement lorsque selectedTools change
 
+  // Fonction pour gérer l'ajout ou la suppression d'un outil dans la liste des outils sélectionnés
   const handleToolToggle = (toolUrl) => {
-    setSelectedTools((prev) =>
-      prev.includes(toolUrl)
-        ? prev.filter((url) => url !== toolUrl)
-        : [...prev, toolUrl],
+    setSelectedTools(
+      (prev) =>
+        prev.includes(toolUrl)
+          ? prev.filter((url) => url !== toolUrl) // Si l'outil est déjà sélectionné, le retirer
+          : [...prev, toolUrl], // Sinon, l'ajouter
     )
   }
 
+  // Fonction pour réinitialiser les filtres
   const handleClearFilters = () => {
     setSelectedTools([])
   }
 
+  // Fonction pour ouvrir la modale avec les détails d'un projet
   const openModal = (project) => {
     setSelectedProject(project)
   }
 
+  // Fonction pour fermer la modale
   const closeModal = () => {
     setSelectedProject(null)
   }
 
   return (
     <div>
+      {/* Section des filtres */}
       <div className="projects__filters">
         <div
           className="projects__filters--tools"
           role="region"
           aria-labelledby="tools-filter"
         >
+          {/* Boucle pour afficher tous les outils sous forme de boutons de filtre */}
           {allTools.map((tool) => (
             <div
               key={tool.name}
@@ -113,8 +119,10 @@ function Projects() {
         </button>
       </div>
 
+      {/* Composant Diapo pour afficher les projets filtrés */}
       <Diapo projects={filteredProjects} onProjectClick={openModal} />
 
+      {/* Affichage de la modale si un projet est sélectionné */}
       {selectedProject && (
         <ProjectModal project={selectedProject} closeModal={closeModal} />
       )}
