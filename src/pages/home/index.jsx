@@ -58,10 +58,7 @@ function Home() {
             reconversion dans le développement web 😊. Passionnée de musique, de
             danse et culture bretonne, j&apos;ai fait mes premiers pas dans la
             vie active en tant que professeure de harpe celtique. Expérience qui
-            aura duré un an, le temps de me rendre compte qu&apos;à 18 ans, je
-            n&apos;avais pas envie de continuer à travailler quand les autres ne
-            travaillent pas , et que j&apos;avais envie de découvrir autre
-            chose.
+            aura duré un an, le temps de réaliser que j'avais envie d'autre chose.
           </p>
           <p>
             J&apos;ai donc repris une voie un peu plus conventionnelle, en
@@ -79,8 +76,7 @@ function Home() {
             utiliser 🤫.
           </p>
           <p>
-            Puis je suis devenue maman, une merveilleuse expérience mais bien
-            plus difficile que ce que j&apos;avais imaginé. J&apos;ai eu envie
+            Puis je suis devenue maman, une merveilleuse et intense expérience. J&apos;ai eu envie
             de me reconcentrer sur l&apos;essentiel et la question de la
             reconversion a été au centre de mes réflexions. J&apos;avais très
             très envie de tenter le développement web. Pour acquérir les
